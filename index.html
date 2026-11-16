@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#ff7bb8"/>
+<title>우리 반 역할 배정표 🌈</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@font-face{font-family:'LocalJua';src:local('BM JUA'),local('BMJUA'),local('배달의민족 주아'),local('Jua')} :root{--pink:#ff4a86;--pink2:#ff70b3;--orange:#ff9d35;--yellow:#ffda34;--mint:#5bef99;--sky:#60ceff;--purple:#c47bff;--brown:#402512;--gray:#69666e;--ink:#463e3b;--pinkbg:#fff3f8;--border:#ffd5dc;--shadow:#d06b9a;--font:'LocalJua','Jua','Malgun Gothic',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background-color:#fffdfb;background-image:radial-gradient(circle,#ffcae5 1.7px,transparent 2px),radial-gradient(circle,#b9e8ff 1.7px,transparent 2px);background-size:32px 32px;background-position:3px 7px,19px 23px;color:var(--ink);font:16px/1.55 var(--font);font-synthesis-weight:none}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.52}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9c80ff;outline-offset:2px}
+.wrap{max-width:1350px;margin:auto;padding:13px 25px 80px}
+.top,.control{background:white;border:3px solid #ffd0db;border-radius:30px;box-shadow:0 7px 0 #ffdbb9;position:relative}
+.top{padding:20px 23px 19px}.top:before{content:'';position:absolute;height:5px;left:25px;right:25px;top:-3px;border-radius:9px;background:linear-gradient(90deg,#ff66ac 0%,#ffbe6a 30%,#70f4aa 56%,#6ccafa 80%,#c185ff 100%)}
+.brand{display:flex;align-items:flex-start;gap:14px}.brand-sticker{display:grid;place-items:center;width:58px;height:59px;flex:none;background:#ffef8c;border:3px solid #ffc608;border-radius:18px;box-shadow:0 4px 0 #e6a400;font-size:31px;transform:rotate(-3deg)}
+h1{font-size:25px;line-height:1.2;letter-spacing:-.05em;margin:1px 0 11px;color:var(--brown);text-shadow:1px 2px 0 #ead1bf;font-weight:500}.class-pill{background:#fff1f6;border:2px dashed #ff65b1;border-radius:99px;color:#f34e91;display:inline-flex;align-items:center;gap:5px;font-size:14px;min-height:33px;padding:2px 15px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px}.btn{border:2px solid var(--line,#f7c4d7);background:var(--bg,#fff);color:var(--fg,#532b2c);border-radius:15px;min-height:44px;padding:8px 15px;font-size:14px;font-weight:500;white-space:normal;transition:transform .14s,filter .14s,box-shadow .14s;box-shadow:0 4px 0 var(--sh,#e0c7c4);text-align:center}.btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.025);box-shadow:0 6px 0 var(--sh,#e0c7c4)}.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--sh,#e0c7c4)}.btn.pink{--bg:#fff1f7;--line:#ff62a8;--fg:#d93478;--sh:#ffb4d4}.btn.yellow{--bg:#ffeb7d;--line:#ffbd00;--fg:#8a510d;--sh:#df9800}.btn.green{--bg:#c6ffdf;--line:#5bea9b;--fg:#207f64;--sh:#55bf7f}.btn.blue{--bg:#bde8ff;--line:#5fc7ff;--fg:#167aa8;--sh:#62a9db}.btn.orange{--bg:#ffe2be;--line:#ffac58;--fg:#aa541a;--sh:#e3a061}.btn.purple{--bg:#efd6ff;--line:#c387ff;--fg:#8f51bc;--sh:#bd94e6}.btn.gray{--bg:#f5f5f5;--line:#ddd;--fg:#777;--sh:#ddd}.btn.hot{--bg:#ff4a7f;--line:#d81e50;--fg:white;--sh:#a90034;background:linear-gradient(145deg,#ff6087,#ff4073);text-shadow:0 1px #bd3154}.btn.tiny{font-size:12px;min-height:37px;padding:7px 11px}.btn.strong{font-size:16px;min-height:59px;padding:11px 22px;border-radius:20px}.btn.selected{outline:3px solid #fff;outline-offset:-6px}
+.control{margin-top:20px;border-color:#ffdac1;box-shadow:0 7px 0 #ffd65f;padding:28px 22px 23px}.statusbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.status-pills{display:flex;gap:8px;flex-wrap:wrap}.status{display:flex;align-items:center;gap:5px;background:#fffefa;border:1.5px solid #ffdc42;border-radius:16px;padding:8px 12px;color:#9f5a13;font-size:14px;min-height:40px}.status strong{font-size:16px;color:#f17c0b}.statusbar .btn.hot{width:288px;max-width:100%}.divide{border:none;border-top:2px dashed #ffbd98;margin:24px 0 14px}.toolsrow{display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap}.search{display:flex;gap:8px;align-items:center;background:#fffaf4;border:2px solid #ffc58f;border-radius:15px;padding:0 13px;max-width:100%;height:45px}.search input{background:transparent;border:0;outline:0;width:336px;max-width:calc(100vw - 120px);font-size:13px;color:var(--ink)}.view-buttons{display:flex;gap:7px;flex-wrap:wrap}
+#main{min-height:160px}.intro{padding-top:35px}.intro .intro-title{font-size:19px;font-weight:500;color:#663f21;line-height:1.3}.intro .intro-body{font-size:15px;line-height:1.6;margin-top:4px}.intro .intro-actions{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:8px}.intro .lock-note{display:inline-flex;color:#9e4c72;font-size:14px;margin-top:11px;padding:7px 12px;border-radius:12px;background:#fff1f5;border:1px solid #ffc4db}
+.content{margin-top:22px}.section-title{font-size:23px;color:#553021;margin:4px 0 13px;text-shadow:1px 1px #ffd5c4}.sub{color:#765e5e;font-size:14px;margin:2px 0 18px}.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.role-card{background:white;border:2px solid #ffd3df;border-radius:22px;box-shadow:0 6px 0 #ffdfc0;overflow:hidden}.role-card:nth-child(6n+2){border-color:#b7e8f8;box-shadow:0 6px 0 #cde9ff}.role-card:nth-child(6n+3){border-color:#f9d583;box-shadow:0 6px 0 #ffebbb}.role-card:nth-child(6n+4){border-color:#b4edd0;box-shadow:0 6px 0 #c8ffdf}.role-card:nth-child(6n+5){border-color:#d9c4ff;box-shadow:0 6px 0 #ead7ff}.role-card:nth-child(6n){border-color:#ffc7b4;box-shadow:0 6px 0 #ffded0}.role-stripe{height:15px;background:repeating-linear-gradient(110deg,#ff95bb 0 17px,#fff3b9 17px 34px,#a7ebd0 34px 51px,#b5ddff 51px 68px)}.role-inner{padding:16px}.role-head{display:flex;align-items:center;gap:12px}.role-emoji{background:#fff1f2;border:2px solid #ffe1b4;border-radius:16px;width:52px;height:52px;display:grid;place-items:center;font-size:27px;flex:none}.role-head .title{font-size:21px;font-weight:500;color:#603729;line-height:1.18}.role-head .cap{font-size:13px;color:#de6c4d}.desc{font-size:14px;color:#735e59;min-height:45px;margin-top:13px}.ppl{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.name-tag{padding:4px 10px;border-radius:999px;background:#f8f5f2;border:1px dashed #dcd5d1;color:#ad9295;font-size:13px}.name-tag.has{background:#fff0f7;border:1px solid #ffabd0;color:#a73471}.name-tag.fixed{background:#fff0bd;border-color:#eab31c;color:#81520f}.role-card.locked .role-inner{background:linear-gradient(145deg,#fffefa,#fff8e4)}.lock-banner{font-size:12px;color:#8d662e;background:#ffe9a7;display:inline-block;padding:2px 8px;border-radius:40px;margin-top:6px}
+.panel{border:2px solid #ffd2e1;background:white;border-radius:25px;box-shadow:0 6px 0 #ffe2c4;padding:20px;margin-top:20px}.panel h2{font-size:21px;color:#673b25;margin:0 0 8px}.panel h3{margin:14px 0 7px;color:#7c488d}.panel p{margin:6px 0 10px}.panel .btn{margin:3px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}.table-scroll{overflow-x:auto;border:1px solid #ffdfc6;border-radius:15px;margin-top:10px}.data-table{border-collapse:collapse;width:100%;font-size:14px;min-width:730px;background:#fff}.data-table th{background:#fff1b6;color:#835327;text-align:left;padding:11px 9px;white-space:nowrap}.data-table td{border-top:1px solid #fbe8e1;padding:8px 9px}.data-table tr:nth-child(even) td{background:#fffdfa}.data-table td input,.data-table td select{border:1.7px solid #edcbd5;border-radius:9px;padding:7px 9px;min-height:38px;max-width:100%;width:100%;color:#4d3840;background:#fff}.data-table td input:disabled,.data-table td select:disabled{border:0;color:#975819;background:#fff2bb}.data-table td select{min-width:113px}.table-small{min-width:560px}.table-small td{padding:9px}.table-small th{padding:9px}.role-editor{display:grid;grid-template-columns:50px minmax(110px,1fr) 72px minmax(150px,1.4fr);gap:8px;align-items:center;margin-bottom:11px;padding:12px;border:1px solid #f1dce8;border-radius:16px;background:#fffdfb}.role-editor.locked{background:#fff5d8;border-color:#efce69}.role-editor input{width:100%;border:1.7px solid #edcbd5;border-radius:10px;background:white;padding:9px 7px}.role-editor input:disabled{color:#7d5c26;background:#fff8e5;border-color:#efdca1}.fixed-banner{border:2px dashed #ffbc59;background:#fff8d9;padding:12px 15px;border-radius:16px;color:#985a25;margin:12px 0}.quiet{font-size:12px;color:#8f7282}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}.settings-top{margin-bottom:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.settings-top input{border:1.8px solid #ffbdd9;border-radius:12px;padding:8px 12px;width:160px;background:white}
+.pill{padding:5px 11px;border-radius:999px;background:#fff0e4;color:#93531b;font-size:13px;display:inline-flex;align-items:center;gap:4px}.chip-pink{background:#ffe0ec;color:#a73e68}.chip-sky{background:#e6f8ff;color:#367ea0}.chip-green{background:#e9ffe9;color:#398764}
+.banner{padding:13px 17px;background:#ecfff5;border:1.5px solid #72daad;border-radius:15px;color:#387258;margin:14px 0}.warn{background:#fff6e5;border-color:#ffb95c;color:#965818}.error{background:#fff0f2;border-color:#ff8cb0;color:#b0355d}.choice-row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.tie-card{border:2px solid #ff9abf;padding:18px;border-radius:19px;background:#fff5fa;max-width:850px}.tie-choice{display:flex;align-items:center;gap:10px;background:white;border:1.5px solid #ffd3e0;border-radius:13px;padding:9px 13px;margin:7px 0;cursor:pointer}.tie-choice input{width:19px;height:19px;accent-color:#ff3b81}.assign-result{display:flex;flex-direction:column;gap:10px}.assignment-row{border:1.5px solid #f2d8d5;background:white;border-radius:15px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.assignment-row.fixed{background:#fff8e0;border-color:#ffcf6e}.assignment-row select{border:1.5px solid #ebb6c6;border-radius:10px;padding:7px 8px;background:white}
+#overlay{position:fixed;inset:0;z-index:80;background:rgba(58,37,52,.36);display:none;align-items:center;justify-content:center;padding:18px}#overlay.show{display:flex}.dialog{background:white;border:3px solid #ffb5d0;border-radius:25px;box-shadow:0 14px 50px #482e4144;max-width:580px;width:100%;padding:23px}.dialog h2{margin:0 0 7px;color:#923d67}.dialog p{margin:10px 0}.dialog .actions{justify-content:flex-end}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#533349;color:white;border-radius:20px;padding:10px 20px;z-index:99;display:none;max-width:calc(100% - 30px);text-align:center}.toast.show{display:block}#filepick{display:none}
+footer{text-align:center;font-size:12px;color:#987b8f;margin-top:50px}
+@media(min-width:1400px){.wrap{padding-top:16px}}
+@media(max-width:840px){.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.columns{grid-template-columns:1fr}.role-editor{grid-template-columns:50px 1fr 62px}.role-editor .desc-edit{grid-column:2/4}}
+@media(max-width:620px){.wrap{padding:10px 11px 60px}.top{padding:17px 15px}.brand-sticker{width:47px;height:48px;font-size:23px}.brand{gap:10px}h1{font-size:20px}.class-pill{font-size:12px}.toolbar{gap:7px}.toolbar .btn{flex:1 1 calc(50% - 7px);min-width:128px;font-size:13px;padding:8px}.control{padding:18px 14px}.statusbar .btn.hot{width:100%}.search{width:100%}.search input{width:100%;max-width:none}.view-buttons{width:100%}.view-buttons .btn{flex:1 1 calc(50% - 6px)}.intro{padding-top:28px}.intro .intro-title{font-size:17px}.card-grid{grid-template-columns:1fr}.role-editor{grid-template-columns:38px 1fr 65px;padding:8px}.role-editor input{font-size:13px}.panel{padding:14px}.btn.strong{font-size:14px}}
+@media print{@page{size:A4 portrait;margin:13mm}body{background:white!important;color:#111!important;font-family:var(--font)!important;font-size:10pt}.wrap{padding:0}.top,.control,.toolbar,.nonprint,#main .intro,footer{display:none!important}.print-title{display:block!important}.content{margin:0}.panel{border:none;box-shadow:none;margin:0;padding:0}.card-grid{grid-template-columns:repeat(2,1fr);gap:9px}.role-card{break-inside:avoid;box-shadow:none!important;border:1px solid #aaa}.role-stripe{height:7px}.role-inner{padding:9px}.role-head .title{font-size:14pt}.role-emoji{width:32px;height:32px;font-size:20px}.desc{font-size:9pt;min-height:0}.name-tag{font-size:9pt}.data-table th{background:#ddd!important}.table-scroll{overflow:visible}.data-table{min-width:0;font-size:8pt}#main{display:block!important}.role-editor{display:none}}
+
+/* Fixed student names: legible, non-editable in the hope survey. */
+.student-fixed-name{display:inline-block;padding:9px 11px;white-space:nowrap;font-weight:500;color:#573530;background:#fff9e8;border:1px solid #f7d5a4;border-radius:10px;min-width:85px}
+#printArea{display:none}
+.milk-carton-svg{display:inline-block;width:1.06em;height:1.1em;vertical-align:-.16em;overflow:visible;flex:none}
+.wish-role-emoji .milk-carton-svg,.role-emoji .milk-carton-svg,.role-symbol .milk-carton-svg{width:1.2em;height:1.2em}
+@media print{
+ @page{size:A4 portrait;margin:9mm 9mm 9mm 9mm}
+ html,body{padding:0!important;margin:0!important;background:#fff!important;width:auto!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body>*:not(#printArea){display:none!important}
+ #printArea{display:block!important;width:192mm;max-width:192mm;height:278mm;max-height:278mm;overflow:hidden;margin:0!important;padding:0!important;color:#4b3040;font:11pt/1.25 var(--font)!important}
+ #printArea .poster-heading{height:30mm;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;border:3px solid #ff89b7;border-radius:6mm;background:linear-gradient(110deg,#fff4f9,#fffceb,#f0fffa)!important;margin-bottom:3mm;padding:2mm 3mm}
+ #printArea .poster-heading .kicker{font-size:9pt;letter-spacing:1.4px;color:#c4588b}
+ #printArea .poster-heading h2{font-size:25pt;line-height:1.12;margin:1.5mm 0 0;font-weight:500;color:#e8387c;letter-spacing:-.8px}
+ #printArea .poster-heading .subtitle{font-size:9pt;color:#795667;margin-top:1.5mm}
+ #printArea .poster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,37mm);gap:2.35mm 2.5mm;align-items:stretch}
+ #printArea .poster-card{border:1.5px solid #f5a9cd;border-radius:4mm;background:#fff9fc!important;padding:2.5mm 3mm;break-inside:avoid;overflow:hidden;min-height:0}
+ #printArea .poster-card:nth-child(6n+2){background:#f1faff!important;border-color:#9bd7f5}
+ #printArea .poster-card:nth-child(6n+3){background:#fff9e9!important;border-color:#eccd74}
+ #printArea .poster-card:nth-child(6n+4){background:#effff5!important;border-color:#91ddb4}
+ #printArea .poster-card:nth-child(6n+5){background:#f6f0ff!important;border-color:#c5a4ed}
+ #printArea .poster-card:nth-child(6n){background:#fff5f0!important;border-color:#f4b29c}
+ #printArea .poster-role{display:flex;align-items:center;gap:2mm;min-height:10mm;line-height:1.12}
+ #printArea .poster-emoji{display:inline-flex;align-items:center;justify-content:center;font-size:21pt;line-height:1;min-width:9mm;max-width:9mm;flex:none}
+ #printArea .poster-emoji .milk-carton-svg{width:8.5mm;height:9mm;vertical-align:0}
+ #printArea .poster-role strong{font-size:16pt;font-weight:500;color:#653147;letter-spacing:-.4px}
+ #printArea .poster-role small{font-size:8pt;color:#a46889;margin-left:auto;white-space:nowrap}
+ #printArea .poster-duty{font-size:8pt;line-height:1.2;color:#755e66;min-height:4mm;margin:1mm 0 1.4mm;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ #printArea .poster-people{display:flex;flex-wrap:wrap;gap:1.5mm;align-content:flex-start;max-height:15mm;overflow:hidden}
+ #printArea .poster-person{border:1px solid #f6b2d3;background:white!important;border-radius:3mm;padding:1mm 2.1mm;display:inline-flex;align-items:baseline;gap:1.5mm;white-space:nowrap;min-height:8mm}
+ #printArea .poster-person .num{font-size:8pt;color:#ac7186}
+ #printArea .poster-person .name{font-size:13.5pt;line-height:1.1;color:#3f2834;font-weight:500}
+ #printArea .poster-person.empty{border-style:dashed;background:#ffffff9a!important;color:#b09aa5;font-size:10pt}
+ #printArea .poster-footer{height:8mm;display:flex;justify-content:space-between;align-items:center;gap:3mm;font-size:8pt;color:#8e6c7b;padding:1.3mm 2.5mm 0}
+ #printArea .poster-footer .count{font-weight:500;color:#a04876}
+}
+
+/* 캔디 게임형 가위바위보 전환 화면 */
+.rivalry-scene{text-align:center;overflow:hidden;border:3px solid #ff89b9;background:radial-gradient(circle at 12% 8%,#fff0b0,transparent 32%),radial-gradient(circle at 90% 88%,#e6c6ff,transparent 33%),#fff9fc;box-shadow:0 8px 0 #ffd4a7;padding:37px 22px 32px}
+.scene-candy{font-size:43px;letter-spacing:8px;margin:0 auto 16px;filter:drop-shadow(1px 3px 0 #ffe0b7);animation:candyHop 1.35s ease-in-out infinite alternate}
+.scene-badge{display:inline-flex;border-radius:99px;background:#fff0a7;border:2px solid #ffc700;padding:5px 18px;color:#8a4d1b;font-size:17px}
+.rivalry-scene h2,.best-complete h2{font-size:clamp(25px,4vw,38px);color:#f43b79;text-shadow:2px 3px 0 #ffe0c3;margin:13px 0 8px}
+.scene-caption{font-size:20px}.match-summary{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin:19px 0}.match-summary>span{border:2px solid #ffb1cf;border-radius:16px;background:#fff;padding:11px 18px;color:#8a5470;font-size:17px}.match-summary>span:last-child{border-color:#9adfe6}.match-summary b{color:#f43b79;font-size:23px}
+.match-names{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;margin:20px auto;max-width:820px}.match-name{border:2px solid #ff9fca;background:#fff;color:#64354d;border-radius:15px;padding:11px 16px;box-shadow:0 4px 0 #ffd9e3;font-size:19px}
+.scene-actions{justify-content:center;margin-top:25px}
+@keyframes candyHop{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-7px) rotate(2deg)}}
+.best-panel{border:3px solid #d4a5ff;box-shadow:0 8px 0 #ffdbbc;background:linear-gradient(135deg,#fff,#fff6fd)}.best-head{display:flex;align-items:center;gap:20px}.best-head h2{font-size:clamp(23px,3vw,30px);margin:12px 0;color:#853d86}.award-medal{font-size:53px;background:#fff0a8;border:3px solid #ffd45c;border-radius:24px;display:grid;place-items:center;width:89px;height:89px;flex:none;box-shadow:0 5px 0 #ffbf7c;transform:rotate(-5deg)}.best-progress{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:21px 0 17px;padding:11px 17px;border-radius:14px;background:#fff0c9;color:#9a4d64}.best-progress b{font-size:19px}.best-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.best-person{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;justify-content:center;background:#fff;border:2px solid #ffc3dd;border-radius:17px;min-height:99px;box-shadow:0 4px 0 #ffdfc9;color:#734957;padding:10px 4px;transition:transform .15s,border-color .15s,background .15s}.best-person:hover{transform:translateY(-3px)}.best-person.active{background:#fff0f7;border-color:#f5468d;box-shadow:0 4px 0 #ff8eba}.best-num{font-size:12px;color:#9a7b8d}.best-person strong{font-size:20px;color:#5b384c}.best-check{font-size:12px;color:#da528d}.best-selected{margin:19px 0;background:#ffe9f3;border:1px dashed #ff86bb;border-radius:13px;padding:12px 15px;color:#8c426e;font-size:16px}
+.best-complete{text-align:center}.best-complete>p{font-size:17px}.award-cards{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:27px 0 35px}.award-card{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:180px;padding:20px 25px;background:#fff;border:3px solid #ffbfd9;border-radius:23px;box-shadow:0 6px 0 #ffdcba}.award-card:nth-child(2){border-color:#ffd46f}.award-card:nth-child(3){border-color:#b9ddff}.award-card strong{font-size:28px;color:#5d3560}.award-card .award-icon{font-size:43px}.award-card span{font-size:13px;color:#956c80}.award-card small{font-size:13px;color:#cd4c83}
+@media(max-width:1050px){.best-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:620px){.best-head{align-items:flex-start;gap:12px}.award-medal{width:60px;height:60px;font-size:36px}.best-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.best-person strong{font-size:17px}.rivalry-scene{padding:26px 13px}.scene-candy{font-size:30px;letter-spacing:3px}}
+@media(prefers-reduced-motion:reduce){.scene-candy{animation:none}}
+
+/* 지난달 칭찬 친구: 가위바위보 -> 다음 -> 1·2·3순위 선택 */
+.best-game-scene{max-width:1080px;margin:26px auto 0;text-align:center;border:3px solid #ff9dcb;border-radius:28px;background:radial-gradient(circle at 8% 17%,#fff1a8 0,transparent 32%),radial-gradient(circle at 92% 85%,#e4c7ff 0,transparent 32%),#fffafd;box-shadow:0 9px 0 #ffcf95;padding:36px 24px 30px}
+.best-game-scene h2{font-size:clamp(27px,4.4vw,46px);color:#f23f87;margin:6px 0 0;text-shadow:2px 3px 0 #ffe0b7}
+.best-game-scene .game-command{font-size:clamp(27px,4vw,42px);color:#823bd1;margin:16px auto 8px;line-height:1.3}
+.best-game-scene .game-help{font-size:18px;color:#785063}
+.best-game-scene .award-cards{margin:22px auto 18px}
+.best-game-scene .award-card{min-width:180px;max-width:250px;flex:1;padding:18px}
+.best-game-scene .award-card strong{font-size:25px}
+.game-next{min-width:230px}
+.best-ranking-panel{background:linear-gradient(145deg,#fff,#fffbef);border:3px solid #ffb6d6;box-shadow:0 8px 0 #ffd180}
+.best-ranking-panel h2{font-size:clamp(25px,3vw,36px);color:#e43c82;margin-bottom:5px}
+.rank-help{font-size:17px;color:#8a5a71}
+.rank-progress{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px 0 12px}
+.rank-status{border:2px solid #e7bbef;border-radius:16px;background:#fff;padding:9px 13px;color:#905898;min-width:145px;text-align:center}
+.rank-status.filled{background:#fff2c5;border-color:#ffce54;color:#89510b}
+.rank-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:14px 0 22px}
+.rank-person{padding:19px 12px;background:#fff;border:2.5px solid #ffb9d2;border-radius:22px;box-shadow:0 5px 0 #ffe4b9;text-align:center}
+.rank-person:nth-child(2){border-color:#b5e7c8;box-shadow:0 5px 0 #c6f3dc}
+.rank-person:nth-child(3){border-color:#cdb4ff;box-shadow:0 5px 0 #e0d3ff}
+.rank-person .rank-emoji{font-size:42px}
+.rank-person .rank-number{font-size:13px;color:#b26883}
+.rank-person .rank-name{font-size:27px;color:#59324b;display:block;line-height:1.5}
+.rank-choices{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:15px}
+.rank-choice{border:2px solid #ffca6c;border-radius:13px;padding:9px 10px;min-width:74px;min-height:49px;background:#fff2c5;color:#86500c;box-shadow:0 4px 0 #ffce94;font-size:16px}
+.rank-choice:hover{transform:translateY(-2px);filter:brightness(1.02)}
+.rank-choice.active{background:#ff4f8e;color:#fff;border-color:#d71969;box-shadow:0 4px 0 #ba1e59}
+.rank-choice:focus-visible{outline:3px solid #8264d5;outline-offset:2px}
+.rank-notice{background:#f0eaff;border:1.5px dashed #ad91ea;border-radius:14px;padding:12px 16px;color:#735199;margin:10px 0}
+.rank-winner .award-icon{font-size:36px}.rank-winner small{color:#a35089}
+@media(max-width:720px){.rank-grid{grid-template-columns:1fr}.rank-person{padding:13px}.rank-choices{gap:10px}.best-game-scene{padding:24px 13px}.rank-status{min-width:95px}}
+
+/* 가위바위보 최종 순위에 따른 역할 우선 선택 카드 */
+.priority-stage{border:3px solid #ff9ed0;background:linear-gradient(140deg,#fffafc,#fffae9 60%,#eafff5);box-shadow:0 9px 0 #ffd39c}
+.priority-stage h2{font-size:clamp(25px,3.5vw,39px);color:#ee3881;text-align:center;margin:4px 0}
+.priority-winners{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin:18px auto 22px}
+.priority-winner{min-width:170px;max-width:275px;flex:1;border:2px solid #e7c2f4;border-radius:18px;background:#fff;padding:11px 17px;text-align:center;box-shadow:0 4px 0 #e9d4ff}
+.priority-winner.current{background:#fff1ab;border-color:#ffc537;box-shadow:0 5px 0 #ffd97f;transform:translateY(-2px)}
+.priority-winner.finished{background:#eafff5;border-color:#6bddac;box-shadow:0 4px 0 #a9f7d0}
+.priority-winner strong{display:block;font-size:20px;color:#65394d}.priority-winner small{font-size:13px;color:#895c73}
+.priority-current{text-align:center;background:#fff1f8;border:2px dashed #ff8fba;padding:14px 13px;border-radius:18px;color:#8f3e70;font-size:22px;margin:14px 0 22px}
+.priority-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.priority-role{display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;min-height:155px;padding:16px 11px;border:3px solid #ffb9db;border-radius:21px;background:#fff;box-shadow:0 6px 0 #ffdebe;color:#663a4d;transition:transform .13s}
+.priority-role:nth-child(5n+2){border-color:#a8e6d3;box-shadow:0 6px 0 #c2f8d7}.priority-role:nth-child(5n+3){border-color:#ffda7d;box-shadow:0 6px 0 #ffe7af}.priority-role:nth-child(5n+4){border-color:#badeff;box-shadow:0 6px 0 #d7e9ff}.priority-role:nth-child(5n){border-color:#d9bbff;box-shadow:0 6px 0 #e9d7ff}
+.priority-role:hover:not(:disabled){transform:translateY(-4px)}.priority-role .role-symbol{font-size:35px}.priority-role strong{font-size:21px}.priority-role small{font-size:13px;color:#92798a}.priority-role .slots{font-size:14px;background:#fff1b7;color:#915714;padding:3px 11px;border-radius:99px}.priority-role:disabled{background:#f6f4f6;color:#aaa;border-color:#e0dade;box-shadow:none;opacity:.6}
+.priority-total{text-align:center;font-size:15px;color:#8a5f72;margin:12px 0}
+@media(max-width:820px){.priority-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.priority-grid{grid-template-columns:1fr}.priority-winner{min-width:110px}.priority-current{font-size:18px}}
+
+/* 여러 명 지원 → 첫 번째 가위바위보 → 최종 3명 → 두 번째 가위바위보 */
+.best-person{cursor:pointer}
+.nominee-pills{max-width:930px;margin:20px auto 24px!important;justify-content:center}
+.nominee-pills .match-name{background:#fff;border:2px solid #ffa8cd;box-shadow:0 3px 0 #ffd9ac;padding:9px 12px}
+.best-panel .best-progress{align-items:center}
+.best-person.active .best-check{font-weight:500}
+.best-game-scene .scene-badge{font-size:15px}
+@media(max-width:620px){.nominee-pills .match-name{font-size:13px;padding:6px 9px}}
+
+/* Cookie reward roster (actual awards are entered in dahandin, not automatically issued). */
+.cookie-summary{background:linear-gradient(110deg,#fff5b2,#fff7e3 55%,#e5fff2);border:2px solid #ffd46a;border-radius:22px;padding:18px 20px;margin:14px 0 20px;box-shadow:0 6px 0 #ffe4a5}
+.cookie-summary strong{font-size:1.5rem;color:#b45415}.cookie-summary p{margin:6px 0 0}
+.cookie-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.cookie-group{border:2px solid #ffd6b1;border-radius:21px;padding:18px;background:#fffbf2;box-shadow:0 5px 0 #ffebd3}
+.cookie-group:nth-child(2){border-color:#b4eeda;background:#f3fffa;box-shadow:0 5px 0 #c7f5e4}
+.cookie-group h3{margin:0 0 12px;font-size:1.22rem}.cookie-person{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;margin:7px 0;background:white;border:1px dashed #eac7a4;border-radius:13px}
+.cookie-amount{background:#ffeb71;color:#70430d;border-radius:100px;padding:4px 10px;white-space:nowrap}
+.cookie-note{background:#fff1f5;border:1.5px dashed #f6a9c4;color:#744452;border-radius:16px;padding:13px 15px;line-height:1.6}
+@media(max-width:720px){.cookie-groups{grid-template-columns:1fr}}
+
+/* 역할 중심 화면: 복수 역할 신청 + 우선선택자 보호 */
+.wish-page-title{font-size:clamp(25px,3.2vw,34px);color:#602e45;letter-spacing:-.04em;margin:0 0 8px}
+.wish-hero{background:linear-gradient(110deg,#fff1f8,#fff6d9 47%,#e9fff3);padding:21px 22px;border:2.5px solid #ffaad0;border-radius:24px;box-shadow:0 5px 0 #ffd8a9;margin-bottom:21px}
+.wish-hero p{font-size:16px;margin:4px 0;color:#754e61}
+.wish-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.wish-role-card{background:white;border:2.5px solid #ffadd0;border-radius:27px;overflow:hidden;box-shadow:0 7px 0 #ffd3b0}
+.wish-role-card:nth-child(5n+2){border-color:#9de9d0;box-shadow:0 7px 0 #b9f2d7}
+.wish-role-card:nth-child(5n+3){border-color:#ffd06d;box-shadow:0 7px 0 #ffe4a9}
+.wish-role-card:nth-child(5n+4){border-color:#a9daff;box-shadow:0 7px 0 #caeaff}
+.wish-role-card:nth-child(5n){border-color:#d4b0ff;box-shadow:0 7px 0 #e6d5ff}
+.wish-role-card .role-stripe{height:12px}
+.wish-role-top{display:flex;align-items:center;gap:13px;padding:20px 21px 12px}
+.wish-role-emoji{width:66px;height:66px;flex:none;background:#fff1b8;border:2px solid #ffcf52;border-radius:20px;display:grid;place-items:center;font-size:37px;box-shadow:0 4px 0 #ffdf98}
+.wish-role-name{font-size:clamp(28px,2.9vw,37px);line-height:1.2;color:#582d24;font-weight:500;letter-spacing:-.04em}
+.wish-role-cap{font-size:14px;color:#a86373;margin-top:2px}
+.wish-role-desc{font-size:14px;color:#785d64;min-height:24px;margin:0 21px 15px}
+.wish-rank-list{display:flex;flex-direction:column;gap:9px;margin:0 17px 18px}
+.wish-rank-row{display:grid;grid-template-columns:87px minmax(0,1fr) auto;align-items:center;gap:9px;min-height:64px;padding:10px 12px;border-radius:16px;background:#fff0f6;border:1.5px solid #ffd0e2}
+.wish-rank-row.rank-2{background:#fff9dd;border-color:#ffdd83}
+.wish-rank-row.rank-3{background:#eaf9ff;border-color:#b7e8ff}
+.wish-rank-name{font-size:17px;font-weight:500;color:#ca407b;white-space:nowrap}
+.rank-2 .wish-rank-name{color:#a86b08}
+.rank-3 .wish-rank-name{color:#277ba9}
+.wish-rank-people{display:flex;align-items:center;flex-wrap:wrap;gap:5px;min-height:32px}
+.wish-student{display:inline-block;font-size:14px;font-weight:500;color:#614151;background:white;border:1px solid #ffd1de;border-radius:100px;padding:4px 9px}
+.wish-rank-empty{color:#b6a0a7;font-size:14px}
+.btn.edit-rank{white-space:nowrap;min-height:35px;padding:4px 9px;font-size:13px}
+.wish-assignment{margin:0 17px 17px;border-top:1.5px dashed #edd0b4;padding:12px 4px 0;color:#886b70}
+.wish-assignment b{color:#553a4f}.wish-assignment .wish-student{margin:0 3px 4px 0}
+.wish-pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0;max-height:min(53vh,445px);overflow-y:auto;padding:2px}
+.wish-pick{display:block;cursor:pointer}.wish-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.wish-pick span{display:flex;justify-content:center;align-items:center;min-height:50px;text-align:center;padding:8px;border:2px solid #f9c9db;border-radius:13px;background:#fff9fc;color:#7a5570;font-size:15px}
+.wish-pick input:checked+span{background:#ff5394;color:#fff;border-color:#e53b7e;box-shadow:0 3px 0 #b92d6e}
+.wish-pick input:focus-visible+span{outline:3px solid #815ce9;outline-offset:2px}
+.wish-pick-help{background:#fff4cd;padding:12px;border-radius:13px;color:#80551d;font-size:14px}
+#dialog{max-height:94vh;overflow-y:auto}
+.result-compact{margin-bottom:12px}.role-result-students{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:6px 0 13px}
+.role-result-students .wish-student{font-size:16px;background:#effff4;border-color:#a8e6c0}
+@media(max-width:960px){.wish-role-grid{grid-template-columns:1fr}}
+@media(max-width:540px){.wish-role-top{padding:14px 13px 9px}.wish-role-name{font-size:28px}.wish-role-desc{margin:0 13px 9px}.wish-rank-list{margin:0 10px 12px}.wish-rank-row{grid-template-columns:72px minmax(0,1fr);gap:6px;padding:9px}.wish-rank-name{font-size:14px}.btn.edit-rank{grid-column:2;justify-self:end}.wish-pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{.wish-role-grid,.wish-hero{display:none!important}}
+
+/* 순위 없는 역할별 신청 명단 */
+.wish-app-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:80px;padding:12px 14px;border:1.7px solid #ffd0e2;border-radius:18px;background:linear-gradient(115deg,#fff0f7,#fffafd)}
+.wish-app-label{color:#d03b7b;font-size:17px;font-weight:500;margin-bottom:6px}
+.wish-app-count{display:inline-block;margin-left:6px;padding:3px 9px;border-radius:100px;background:#ffe2ab;color:#87531d;font-size:12px}
+.wish-app-people{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:28px}
+.wish-app-row .btn{white-space:nowrap}
+.locked-students{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.locked-student{padding:8px 12px;border:1.5px dashed #dbbdcd;border-radius:13px;background:#f9f4f9;color:#8b7280;font-size:14px}
+.wish-pick.disabled{cursor:not-allowed}
+.wish-pick.disabled span{background:#f6f3f6;color:#aaa0a9;border-color:#e7e0e5;box-shadow:none;opacity:.85}
+.wish-pick.disabled input{display:none}
+.wish-pick.disabled small{display:block;margin-top:4px;font-size:12px;line-height:1.3;color:#91848b}
+.wish-pick.disabled{pointer-events:none;user-select:none}
+.application-note{background:#fff8d4;border:1.5px solid #ffe08d;padding:11px 14px;border-radius:15px;margin:10px 0;color:#80603e}
+@media(max-width:540px){.wish-app-row{grid-template-columns:minmax(0,1fr)}.wish-app-row .btn{justify-self:end}}
+
+/* 신청부터 배정까지 하나의 단계 흐름 · 남은 역할 직접 배정 */
+.remaining-hero{border-color:#7dddbe;background:linear-gradient(115deg,#eefff5,#fff2fb 55%,#fff6cf)}
+.stage-label{display:inline-flex;align-items:center;border-radius:99px;padding:5px 13px;background:#ffdc73;border:1.5px solid #ffbd36;color:#9b5610;font-size:14px;margin-bottom:10px}
+.remaining-stat{display:inline-flex;align-items:center;gap:4px;padding:10px 17px;border:2px solid #9de8c6;background:#fff;border-radius:16px;margin-top:9px;color:#267057}
+.remaining-stat strong{font-size:22px;color:#e53c86}
+.remaining-names{background:#fff;border:2px dashed #ffc3d9;border-radius:21px;padding:17px 19px;margin:21px 0}
+.remaining-names strong{font-size:19px;color:#75456c}
+.remaining-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.remaining-chip{display:inline-block;background:#fff3c4;border:1.5px solid #ffda6d;color:#89510a;border-radius:99px;padding:5px 12px}
+.remaining-applicants{margin:0 18px 8px;padding:12px 14px;border-radius:16px;background:#fff4fa;border:1px dashed #ffbfdb;color:#a24b72;min-height:90px}
+.remaining-applicants>b{display:block;margin-bottom:8px;font-size:15px}
+.remaining-card-action{padding:6px 18px 19px}
+.remaining-card-action .btn{width:100%;font-size:16px;min-height:51px}
+.remaining-actions{margin-top:24px;padding:15px;background:#fffcf7;border-radius:19px;border:1.5px dashed #ffd4ae}
+@media(max-width:620px){.remaining-stat{flex-wrap:wrap}.remaining-names{padding:13px}}
+
+/* Typography refinement: preserve the chosen typeface, remove fake bolding.
+   Its regular face is a single-weight font, so 900 previously synthesized heavier strokes. */
+html,body{font-synthesis:none;font-synthesis-weight:none}
+strong,b{font-weight:500}
+h1{font-weight:500;text-shadow:none}
+.btn.hot{font-weight:500;text-shadow:none}
+</style>
+<!-- KCC간판체 저작자/출처: 한국저작권위원회 · 공유마당 https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?menuNo=200195&wrtSn=13333397 -->
+</head>
+<body>
+<div class="wrap">
+<header class="top nonprint">
+ <div class="brand"><div class="brand-sticker">🎒</div><div><h1>우리 반 역할 배정표 🌈</h1><div class="class-pill" id="classPill">🏠 우리 반 · 2026학년도 2학기 🖍️</div></div></div>
+ <div class="toolbar">
+  <button class="btn purple" data-action="best">🌟 저번 달에 잘 한 사람</button>
+  <button class="btn yellow" data-action="application-flow">📝 역할 신청·배정 시작</button>
+  <button class="btn orange" data-action="print">🖨️ A4 인쇄 / PDF</button>
+  
+ </div>
+</header>
+<section class="control nonprint">
+ <div class="statusbar"><div class="status-pills">
+  <div class="status">👧 우리 반: <strong id="statStudents">24명</strong></div>
+  
+  <div class="status">🎉 배정 완료: <strong id="statAssigned">3명</strong></div>
+ </div><div class="choice-row"><button class="btn blue" data-action="results">🏅 배정 결과</button><button class="btn gray" data-action="reassign">↩️ 다시 배정</button></div></div>
+ <hr class="divide"/><div class="toolsrow">
+  <label class="search">🔍 <input id="search" type="search" placeholder="역할 이름 또는 신청 학생 이름 검색" aria-label="역할 또는 학생 검색"/></label>
+  <div class="view-buttons"><button class="btn yellow tiny" data-action="wishlist">📝 신청 현황 보기</button><button class="btn yellow tiny" data-action="cards">🗂️ 카드 뷰</button><button class="btn gray tiny" data-action="table">📋 표 뷰</button></div>
+ </div>
+</section>
+<main id="main"></main>
+<footer class="nonprint">🍬 우리 반 24명 · 학급 임원 3명 고정 · 저장한 희망과 추천은 이 브라우저에 보관됩니다 · KCC간판체: 한국저작권위원회(공유마당)</footer>
+</div>
+
+<div id="overlay" role="dialog" aria-modal="true" aria-label="안내 창"><div class="dialog" id="dialog"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<section id="printArea" aria-label="A4 인쇄용 배정표"></section>
+<script>
+'use strict';
+(()=>{
+ const officerNames={6:'임라온',23:'정의진',24:'최지훈'};
+ const officerOrder=['정의진','최지훈','임라온'];
+ const OFFICER_ROLE='officer';
+ const FIXED_STUDENTS=["강다은", "김민서", "김혜린", "민미소", "손지연", "임라온", "전가은", "정서우", "정유주", "정하윤", "진서하", "자누리", "권기범", "김강민", "김성빈", "김지효", "남유혁", "백서진", "손성준", "송이수", "이시원", "전유진", "정의진", "최지훈"];
+ const DEFAULT_ROLES=[
+  {id:'officer',title:'학급 임원',emoji:'👑',cap:3,desc:'선생님과 친구들을 도와 학급에 봉사하기'},
+  {id:'assistant',title:'선생님 비서',emoji:'💌',cap:2,desc:'학급 임원을 도와 선생님 심부름하기'},
+  {id:'schedule',title:'시간표',emoji:'📋',cap:1,desc:'집 가기 전 시간표 바꾸기'},
+  {id:'date',title:'날짜 바꿈이',emoji:'📅',cap:2,desc:'집 가기 전 내일 날짜와 요일로 바꾸기'},
+  {id:'front',title:'앞쓸이',emoji:'🧹',cap:2,desc:'교실 앞 쓸기'},
+  {id:'back',title:'뒷쓸이',emoji:'🧹',cap:2,desc:'교실 뒤 쓸기'},
+  {id:'left',title:'왼쓸이',emoji:'🧹',cap:2,desc:'교실 왼쪽 쓸기'},
+  {id:'right',title:'오쓸이',emoji:'🧹',cap:2,desc:'교실 오른쪽 쓸기'},
+  {id:'desks',title:'책줄이',emoji:'🪑',cap:2,desc:'청소 끝나고 책상 줄 맞추기'},
+  {id:'recycle',title:'분리배출',emoji:'♻️',cap:3,desc:'1층으로 분리배출하기'},
+  {id:'window',title:'창문 열기',emoji:'🪟',cap:1,desc:'아침에 오면 환기 시키기 / 1교시 전 문 닫기'},
+  {id:'milk',title:'우유 당번',emoji:'🧃',cap:2,desc:'우유를 친구들에게 전달해주기'}
+ ];
+ const KEY='candy_roles_2person_fixed_roster_2026_v1';
+ const $=id=>document.getElementById(id);
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ // 우유 당번: 음료수 잔이 아닌 종이 우유곽 아이콘을 직접 그립니다.
+ function roleIconMarkup(r){
+  if(r?.id!=='milk')return esc(r?.emoji||'⭐');
+  return `<svg class="milk-carton-svg" viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="우유곽">
+   <path d="M16 24 L28 8 H46 L57 24 V62 Q57 66 53 66 H18 Q14 66 14 62 V29 Q14 26 16 24Z" fill="#ebfbff" stroke="#2b83bd" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M28 8 L17 25 H46 L57 24 L46 8Z" fill="#8fd9ff" stroke="#2b83bd" stroke-width="2.5" stroke-linejoin="round"/>
+   <path d="M46 8 V25 L57 24" fill="#b8e9ff" stroke="#2b83bd" stroke-width="2.5" stroke-linejoin="round"/>
+   <path d="M16 25 H46 V64 H18 Q14 64 14 60 V29 Q14 26 16 25Z" fill="#fff" stroke="#2b83bd" stroke-width="2.2"/>
+   <path d="M16 33 H46" stroke="#99d8ff" stroke-width="3"/>
+   <path d="M30 38 C26 34 20 39 25 44 L31 50 L37 44 C42 39 35 34 31 38Z" fill="#ff78ad"/>
+   <text x="31" y="59" font-family="sans-serif" font-weight="bold" text-anchor="middle" font-size="11" fill="#1978b0">우유</text>
+  </svg>`;
+ }
+
+ const defaults=()=>({className:'2학년 6반',term:'2026학년도 2학기',students:FIXED_STUDENTS.map((name,i)=>({id:i+1,name,wish:[]})),roles:clone(DEFAULT_ROLES),assigned:{6:'officer',23:'officer',24:'officer'},updatedAt:null,autoFill:true,bestCandidates:[],previousBest:[],bestRanking:[],priorityChoices:{},flowStage:null});
+ const safeStorage={read(){try{return JSON.parse(localStorage.getItem(KEY))}catch{return null}},write(value){try{localStorage.setItem(KEY,JSON.stringify(value));return true}catch{return false}}};
+ function normalize(raw){const d=defaults();if(!raw||typeof raw!=='object')return d;
+  if(typeof raw.className==='string')d.className=raw.className.slice(0,70);
+  if(typeof raw.term==='string')d.term=raw.term.slice(0,80);
+  if(Array.isArray(raw.students)){raw.students.forEach((s,i)=>{const id=Number(s?.id??i+1);if(Number.isInteger(id)&&id>=1&&id<=24&&!officerNames[id]){d.students[id-1].wish=Array.isArray(s?.wish)?[...new Set(s.wish.filter(x=>typeof x==='string'))].slice(0,11):[];}})}
+  // 학급 임원 역할 및 해당 학생 3명은 가져온 데이터로도 변경할 수 없습니다.
+  d.roles[0]=clone(DEFAULT_ROLES[0]);d.students.forEach(s=>{if(officerNames[s.id]){s.wish=[]}else s.wish=s.wish.filter(id=>d.roles.some(r=>r.id===id&&id!=='officer'))});
+  if(raw.assigned&&typeof raw.assigned==='object'){for(const s of d.students){if(!officerNames[s.id]){const id=raw.assigned[s.id];if(typeof id==='string'&&id!==OFFICER_ROLE&&d.roles.some(r=>r.id===id))d.assigned[s.id]=id;}}}
+  for(const s of d.students.filter(s=>officerNames[s.id]))d.assigned[s.id]='officer';d.autoFill=raw.autoFill!==false;d.previousBest=Array.isArray(raw.previousBest)?[...new Set(raw.previousBest.map(Number).filter(id=>Number.isInteger(id)&&id>=1&&id<=24))].slice(0,3):[];
+  const candidateIn=Array.isArray(raw.bestCandidates)?raw.bestCandidates: d.previousBest;
+  d.bestCandidates=[...new Set(candidateIn.map(Number).filter(id=>Number.isInteger(id)&&id>=1&&id<=24))];
+  if(!d.previousBest.every(id=>d.bestCandidates.includes(id))){d.previousBest=[]}
+  const rankIn=Array.isArray(raw.bestRanking)?raw.bestRanking.map(Number):[];
+  d.bestRanking=rankIn.length===3 && rankIn.every(id=>d.previousBest.includes(id)) && new Set(rankIn).size===3 ? rankIn : [];
+  // 우선 선택은 최종 순위에 포함된 비임원만 가능하며, 일반 배정보다 정원에서 먼저 확보합니다.
+  d.priorityChoices={};
+  const sourceChoices=raw.priorityChoices && typeof raw.priorityChoices==='object' ? raw.priorityChoices : {};
+  for(const id of d.bestRanking){
+   if(officerNames[id])continue;
+   const rid=sourceChoices[id];const selectedRole=d.roles.find(r=>r.id===rid&&r.id!=='officer');
+   if(selectedRole && Object.values(d.priorityChoices).filter(x=>x===rid).length<selectedRole.cap)d.priorityChoices[id]=rid;
+  }
+   for(const id of Object.keys(d.priorityChoices))d.assigned[id]=d.priorityChoices[id];
+   for(const id of d.previousBest){d.students[id-1].wish=[];if(!officerNames[id]&&!d.priorityChoices[id])delete d.assigned[id];}
+  // 예전 버전에서 여러 역할을 신청했다면, 먼저 고른 역할 1개만 유지합니다.
+  // 순서는 이전 브라우저 기록의 선택 순서입니다.
+  d.students.forEach(s=>{if(s.wish.length>1)s.wish=s.wish.slice(0,1)});
+  // 변경된 정원과 불일치하는 기록은 우선 선택자를 보호하고 정리합니다.
+  for(const r of d.roles.slice(1)){
+    const ids=Object.keys(d.assigned).filter(id=>d.assigned[id]===r.id);
+    ids.sort((a,b)=>Number(!!d.priorityChoices[b])-Number(!!d.priorityChoices[a]));
+    ids.slice(r.cap).forEach(id=>delete d.assigned[id]);
+  }
+  d.flowStage=['remaining','contests'].includes(raw.flowStage)?raw.flowStage:null;
+  return d;
+ }
+ let data=normalize(safeStorage.read()),mode=data.flowStage==='remaining'?'remaining':'wishes',searchText='',flow=null,tie=null,toastTimer=null,selectedBest=[...data.bestCandidates],selectedFinalists=[...data.previousBest],draftBestRanking=[...data.bestRanking];
+ function save(){if(!safeStorage.write(data)){notify('브라우저 저장이 차단되어 있어요. 인쇄/PDF로 결과를 보관해 주세요.');}}
+ function fixed(s){return !!officerNames[s.id]}
+ function role(id){return data.roles.find(x=>x.id===id)}
+ function knownStudents(){return data.students.filter(s=>s.name.trim()&&!fixed(s))}
+  function generalStudents(){return knownStudents().filter(s=>!data.previousBest.includes(s.id))}
+  function excludedStudents(){return data.students.filter(s=>fixed(s)||data.previousBest.includes(s.id))}
+  function previousBestText(){return data.previousBest.map(id=>`${id}번 ${data.students[id-1]?.name||''}`).join(' · ')}
+ function assignedCount(id){return Object.values(data.assigned).filter(x=>x===id).length}
+ function vacancies(id){return Math.max(0,(role(id)?.cap||0)-assignedCount(id))}
+ function totalCapacity(){return data.roles.reduce((sum,r)=>sum+r.cap,0)}
+ function roleText(id){return role(id)?.title||'미배정'}
+ function render(){ $('classPill').textContent=`🏠 ${data.className||'우리 반'} · ${data.term||''} 🖍️`;
+  $('statStudents').textContent='24명';$('statAssigned').textContent=Object.keys(data.assigned).length+'명';
+  $('main').innerHTML=mode==='intro'?renderIntro():mode==='cards'?renderCards():mode==='table'?renderTable():mode==='survey'?renderSurvey():mode==='student-survey'?renderStudentSurvey():mode==='wishes'?renderWishList():mode==='results'?renderResults():mode==='cookies'?renderCookieRewards():mode==='tie'?renderTie():mode==='tie-intro'?renderTieIntro():mode==='best'?renderBest():mode==='best-pick-game'?renderBestPickGame():mode==='best-pick'?renderBestPick():mode==='best-game'?renderBestGame():mode==='best-rank'?renderBestRanking():mode==='best-results'?renderBestResults():mode==='best-role-pick'?renderBestRolePick():mode==='remaining'?renderRemainingStage():renderIntro();
+  const search=$('search');search.value=searchText;search.disabled=['survey','student-survey','tie','tie-intro','best','best-pick-game','best-pick','best-game','best-rank','best-results','best-role-pick','remaining'].includes(mode);
+ }
+ function renderIntro(){return `<div class="intro"><div class="intro-title">🎒<br>우리 반 친구들, 원하는 역할을 신청해 볼까요?</div><div class="intro-body">저번 달에 잘한 친구 3명은 <b>가위바위보 후 우선 역할 선택!</b><br>그 외 친구들은 <b>1·2·3순위 없이 원하는 역할 하나에 신청</b>할 수 있어요.<br>같은 역할에 신청자가 몰리면 <b>컴퓨터가 임의로 뽑지 않고 직접 가위바위보</b>를 합니다!</div><div class="lock-note">🔒 학급 임원 <strong>&nbsp;정의진 · 최지훈 · 임라온</strong>&nbsp; 3명은 고정이에요.</div>${data.previousBest.length===3?`<div class="rank-notice">🌟 우선 선택자 3명: ${esc(previousBestText())} · 이 친구들은 일반 역할 신청에서는 선택할 수 없어요.</div>`:''}${priorityMissing().length?`<div class="rank-notice">🏅 칭찬 친구의 우선 역할 선택이 아직 끝나지 않았어요! <button class="btn purple" data-action="best-role-pick">🍬 1·2·3순위 역할 선택 이어하기</button></div>`:priorityChosenCount()?`<div class="rank-notice">🎁 칭찬 친구 ${priorityChosenCount()}명의 역할을 먼저 확보했어요. <button class="btn purple" data-action="best-results">선택 결과 보기</button></div>`:''}</div>`}
+ function filteredRoles(){
+  const q=searchText.trim().toLowerCase();
+  return data.roles.filter(r=>r.id!=='officer'&&(!q||(r.title+' '+r.desc+' '+data.students.filter(s=>data.assigned[s.id]===r.id||s.wish.includes(r.id)).map(s=>s.id+'번 '+s.name).join(' ')).toLowerCase().includes(q)));
+ }
+  function roleApplicants(roleId){return generalStudents().filter(s=>s.wish.includes(roleId)).sort((a,b)=>a.id-b.id)}
+  function applicationHtml(roleId,canEdit){
+    const names=roleApplicants(roleId);
+    return `<div class="wish-app-row"><div><div class="wish-app-label">💌 이 역할을 신청한 친구 <span class="wish-app-count">${names.length}명</span></div><div class="wish-app-people">${names.length?names.map(s=>`<span class="wish-student">${s.id}번 ${esc(s.name)}</span>`).join(''):'<span class="wish-rank-empty">아직 신청한 친구 없음</span>'}</div></div>${canEdit?`<button type="button" class="btn pink edit-rank" data-action="edit-role-application" data-role="${esc(roleId)}">✏️ 학생 선택</button>`:''}</div>`;
+  }
+  function roleWishCards(editable,showAssigned=false){
+   const roles=filteredRoles();
+   return `<div class="wish-role-grid">${roles.map(r=>{
+     const assigned=data.students.filter(s=>data.assigned[s.id]===r.id).sort((a,b)=>a.id-b.id);
+     return `<article class="wish-role-card"><div class="role-stripe"></div><div class="wish-role-top"><span class="wish-role-emoji">${roleIconMarkup(r)}</span><div><div class="wish-role-name">${esc(r.title)}</div><div class="wish-role-cap">정원 ${r.cap}명 · 학생별 한 역할만 신청</div></div></div><p class="wish-role-desc">♡ ${esc(r.desc)}</p><div class="wish-rank-list">${applicationHtml(r.id,editable)}</div>${showAssigned?`<div class="wish-assignment"><b>✅ 최종 배정 ${assigned.length}/${r.cap}명</b><div class="role-result-students">${assigned.length?assigned.map(s=>`<span class="wish-student">${s.id}번 ${esc(s.name)}</span>`).join(''):'<span class="wish-rank-empty">아직 배정 전</span>'}</div></div>`:''}</article>`;
+   }).join('')||'<p>검색 결과가 없어요.</p>'}</div>`;
+  }
+  function renderCards(){return `<div class="content"><div class="wish-hero"><h2 class="wish-page-title">🍬 역할이 주인 우리 반 역할 배정표</h2><p>역할 이름을 크게! 아래에는 그 역할을 <b>신청한 학생 명단</b>이 모여 나타나요.</p><div class="fixed-banner">👑 학급 임원 별도 고정 · <b>6번 임라온 · 23번 정의진 · 24번 최지훈</b></div>${data.previousBest.length===3?`<div class="application-note">🌟 지난달 우수 친구 <b>${esc(previousBestText())}</b> · 일반 신청 제외, 우선 역할 선택 대상</div>`:''}</div>${roleWishCards(false,true)}<div class="actions"><button class="btn yellow" data-action="survey">📝 역할별 신청 학생 선택하기</button><button class="btn purple" data-action="wishlist">🌟 신청 명단만 보기</button></div></div>`}
+ function renderTable(){const roles=filteredRoles();return `<section class="panel content"><h2>📋 역할별 배정표</h2><div class="fixed-banner">👑 학급 임원 고정: <b>정의진 · 최지훈 · 임라온</b> (별도 3명)</div><p class="sub">역할별 배정 현황입니다.</p><div class="table-scroll"><table class="data-table table-small"><thead><tr><th>역할</th><th>정원</th><th>하는 일</th><th>배정 학생</th></tr></thead><tbody>${roles.map(r=>`<tr><td>${roleIconMarkup(r)} ${esc(r.title)} ${r.id==='officer'?'🔒':''}</td><td>${r.cap}명</td><td>${esc(r.desc)}</td><td>${data.students.filter(s=>data.assigned[s.id]===r.id).sort((a,b)=>r.id==='officer'?officerOrder.indexOf(a.name)-officerOrder.indexOf(b.name):a.id-b.id).map(s=>esc(s.name)).join(', ')||'—'}</td></tr>`).join('')}</tbody></table></div></section>`}
+  function renderSurvey(){
+   const winners=data.previousBest.length===3?`<div class="application-note">🌟 저번 달에 잘한 친구 3명: <b>${esc(previousBestText())}</b><br>이 친구들은 이미 우선 선택 기회가 있으므로 <b>일반 신청에서 선택할 수 없어요.</b></div>`:'<div class="application-note">🌟 저번 달에 잘한 친구 3명을 정하면, 일반 역할 신청에서 자동으로 제외됩니다.</div>';
+   return `<section class="content"><div class="wish-hero"><h2 class="wish-page-title">📝 역할별 신청하기 (순위 없음)</h2><p>원하는 역할 카드의 <b>‘학생 선택’</b>을 눌러 신청하는 친구를 골라 주세요. 한 친구는 <b>한 역할에만 신청</b>할 수 있어요. 이미 다른 역할에 신청한 친구는 회색으로 표시되어 선택할 수 없습니다.</p><p>다음 단계를 누르면 경쟁 역할부터 가위바위보로 결정하고, 남은 친구들은 남은 역할을 직접 골라 배정합니다. 자동 추첨은 하지 않아요.</p><div class="fixed-banner">🔒 학급 임원 3명은 고정 · 번호/이름 수정 불가</div>${winners}</div>${roleWishCards(true)}<div class="actions"><button class="btn hot strong" data-action="assign">🎲 신청 완료 · 다음 단계로</button><button class="btn purple" data-action="wishlist">📋 신청 현황만 보기</button></div></section>`;
+  }
+  function renderStudentSurvey(){return renderSurvey()}
+  function renderWishList(){return `<section class="content"><div class="wish-hero"><h2 class="wish-page-title">🍬 역할별 신청 현황 한눈에 보기</h2><p><b>역할이 중심!</b> 큰 역할 이름 아래 신청한 학생을 모두 보여줘요. 학생 한 명당 한 역할에만 신청할 수 있어요.</p><div class="fixed-banner">👑 학급 임원 고정 · <b>임라온 · 정의진 · 최지훈</b></div>${data.previousBest.length===3?`<div class="application-note">🌟 우선선택자 3명 · <b>${esc(previousBestText())}</b> (일반 신청 제외)</div>`:''}</div>${roleWishCards(false)}<div class="actions"><button class="btn hot" data-action="survey">✏️ 역할별 신청 수정</button><button class="btn yellow" data-action="assign">🎲 다음 단계 · 배정하기</button><button class="btn purple" data-action="cards">🍭 배정 학생 함께 보기</button></div></section>`}
+ function renderResults(){
+  const assignedAll=data.students.filter(s=>data.assigned[s.id]);const unassigned=data.students.filter(s=>s.name&&!data.assigned[s.id]);
+  return `<section class="content"><div class="wish-hero"><h2 class="wish-page-title">🏅 역할별 최종 배정 결과 <span class="pill">${assignedAll.length}/24명 완료</span></h2><p>각 역할에 배정된 학생과 <b>역할별 신청 학생</b>을 함께 볼 수 있어요.</p><div class="fixed-banner">👑 고정 학급 임원 · <b>6번 임라온 · 23번 정의진 · 24번 최지훈</b> (변경 불가)</div></div>${roleWishCards(false,true)}${unassigned.length?`<div class="panel">⏳ 미배정: ${unassigned.map(s=>`${s.id}번 ${esc(s.name)}`).join(', ')}</div>`:''}
+  <details class="panel"><summary style="cursor:pointer;font-size:20px;color:#6c4061">✏️ 학생별 배정 수정하기 (필요할 때만 펼치기)</summary><p class="sub">우선 역할을 선택한 학생과 고정 임원은 수정할 수 없어요.</p><div class="assign-result">${data.students.map(s=>`<div class="assignment-row ${fixed(s)?'fixed':''}"><div><strong>${s.id}번 ${esc(s.name)}</strong></div><div>${fixed(s)?'<span class="pill">🔒 임원</span>':data.priorityChoices[s.id]?`<span class="pill chip-pink">🌟 우선 선택 · ${esc(roleText(data.assigned[s.id]))}</span>`:`<select class="manual-assign" data-id="${s.id}" aria-label="${esc(s.name)} 역할 수동 변경"><option value="">미배정</option>${data.roles.filter(r=>r.id!=='officer'&&r.cap>0).map(r=>`<option value="${esc(r.id)}" ${data.assigned[s.id]===r.id?'selected':''}>${esc(r.title)}</option>`).join('')}</select>`}</div></div>`).join('')}</div></details>
+  <div class="actions">${data.flowStage==='remaining'?'<button class="btn hot" data-action="resume-remaining">🎁 남은 역할 배정 이어하기</button>':''}<button class="btn orange" data-action="print">🖨️ A4 인쇄 / PDF</button></div></section>`;
+ }
+ function cookieRecipients(){
+  return ['recycle','milk'].map(id=>({role:role(id),people:data.students.filter(s=>data.assigned[s.id]===id).sort((a,b)=>a.id-b.id)}));
+ }
+ function cookieText(){
+  const groups=cookieRecipients();
+  return ['우리 반 역할 배정표 - 다했니 쿠키 지급 대상 (실제 지급 전 확인)', '번호\t이름\t담당 역할\t지급할 쿠키',
+   ...groups.flatMap(g=>g.people.map(s=>`${s.id}\t${s.name}\t${g.role.title}\t5`)),
+   '', '※ 다했니에서 쿠키를 직접 지급해야 하며, 이 명단 복사만으로는 지급되지 않습니다.'].join('\n');
+ }
+ function copyCookieRoster(){
+  const txt=cookieText();
+  if(navigator.clipboard?.writeText){navigator.clipboard.writeText(txt).then(()=>notify('5쿠키 지급 대상 명단을 복사했어요. 다했니에서 실제 지급해 주세요.')).catch(()=>fallbackCookieCopy(txt));}
+  else fallbackCookieCopy(txt);
+ }
+ function fallbackCookieCopy(txt){
+  const ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;left:-10000px;top:0';document.body.appendChild(ta);ta.select();
+  try{if(document.execCommand('copy'))notify('지급 대상 명단을 복사했어요.');else notify('복사에 실패했어요. CSV 저장을 이용해 주세요.')}catch{notify('복사에 실패했어요. CSV 저장을 이용해 주세요.')}finally{ta.remove()}
+ }
+ function exportCookieCSV(){
+  const rows=[['번호','이름','담당 역할','지급할 쿠키'],...cookieRecipients().flatMap(g=>g.people.map(s=>[s.id,s.name,g.role.title,5]))];
+  download('다했니_5쿠키_지급대상.csv','\ufeff'+rows.map(row=>row.map(csvCell).join(',')).join('\r\n'),'text/csv;charset=utf-8');
+  notify('CSV 명단을 저장했어요. 다했니에 자동으로 지급된 것은 아닙니다.');
+ }
+ function renderCookieRewards(){
+  const groups=cookieRecipients(),count=groups.reduce((n,g)=>n+g.people.length,0),full=count===5;
+  return `<section class="panel content"><h2>🍪 다했니 5쿠키 지급 대상</h2>
+   <p class="sub">역할 배정 결과를 바탕으로 대상자를 자동 집계합니다. <b>분리배출 3명 · 우유 당번 2명</b>에게 각각 5쿠키예요.</p>
+   <div class="cookie-summary">🍪 지급 대상 <strong>${count}명</strong> · 지급 예정 <strong>${count*5}쿠키</strong><p>${full?'✅ 다섯 자리의 배정이 모두 끝났어요.':'⏳ 아직 배정되지 않은 자리가 있어요. 역할 배정이 끝나면 명단이 자동으로 채워집니다.'}</p></div>
+   <div class="cookie-groups">${groups.map(g=>`<div class="cookie-group"><h3>${roleIconMarkup(g.role)} ${esc(g.role.title)} <span class="pill">${g.people.length}/${g.role.cap}명</span></h3>${g.people.map(s=>`<div class="cookie-person"><b>${s.id}번 ${esc(s.name)}</b><span class="cookie-amount">🍪 +5</span></div>`).join('')}${Array.from({length:Math.max(0,g.role.cap-g.people.length)},()=>'<div class="cookie-person"><span class="quiet">아직 배정 전</span><span class="quiet">—</span></div>').join('')}</div>`).join('')}</div>
+   <div class="cookie-note"><b>중요:</b> 이 화면은 지급할 명단만 계산합니다. <b>다했니 계정에 쿠키가 자동으로 들어가지는 않아요.</b> 다했니에서 학생별로 직접 5쿠키를 지급해 주세요. 지원되는 공식 연동 방식이 확인되면 자동 지급을 연결할 수 있습니다.</div>
+   <div class="actions"><button class="btn yellow" data-action="cookie-copy">📋 5쿠키 명단 복사</button><button class="btn hot" data-action="cookie-open">🍪 다했니 학생 명단 열기</button><button class="btn gray" data-action="results">🏅 배정 결과 보기</button></div>
+  </section>`;
+ }
+ function renderTie(){if(!tie)return renderIntro();const r=role(tie.roleId);return `<section class="panel content"><h2>✊✌️✋ 가위바위보로 결정해요!</h2><div class="tie-card"><div><span class="pill chip-pink">신청 경쟁</span> <span class="pill chip-sky">남은 자리 ${tie.seats}명</span></div><h3>${roleIconMarkup(r)} ${esc(r.title)} · ${tie.candidates.length}명 희망</h3><p>가위바위보를 직접 진행한 뒤 <b>승자 ${tie.seats}명</b>을 선택해 주세요. 선택되지 않은 친구들은 마지막 단계에서 남은 역할 중 직접 골라 배정합니다.</p>${tie.candidates.map(id=>{const s=data.students[id-1];return `<label class="tie-choice"><input class="tie-winner" type="checkbox" value="${id}"> ${s.id}번 <b>${esc(s.name)}</b></label>`}).join('')}<div class="actions"><button class="btn hot" data-action="resolve-tie">🏅 가위바위보 승자 확정</button><button class="btn gray" data-action="cancel-assign">배정 취소</button></div></div></section>`}
+ function renderTieIntro(){
+  if(!tie)return renderIntro();const r=role(tie.roleId);
+  return `<section class="panel content rivalry-scene" aria-live="polite"><div class="scene-candy">🍬 ✊ ✌️ ✋ 🍭</div><span class="scene-badge">역할 신청이 겹쳤어요!</span><h2>가위바위보 대결로 넘어갑니다!</h2><p class="scene-caption"><b>${roleIconMarkup(r)} ${esc(r.title)}</b>에 희망자가 몰렸어요.</p><div class="match-summary"><span>희망 학생 <b>${tie.candidates.length}명</b></span><span>남은 자리 <b>${tie.seats}명</b></span></div><div class="match-names">${tie.candidates.map(id=>`<span class="match-name">${id}번 ${esc(data.students[id-1].name)}</span>`).join('')}</div><p>서로 양보 없이 희망이 겹친 친구들은 <b>직접 가위바위보</b>를 해요. 선생님이 대결을 시작해 주세요!</p><div class="actions scene-actions"><button class="btn hot strong" data-action="begin-tie">✊✌️✋ 가위바위보 시작!</button><button class="btn gray" data-action="cancel-assign">배정 취소</button></div></section>`;
+ }
+ function renderBest(){
+  return `<section class="panel content best-panel"><div class="best-head"><div class="award-medal">🌟</div><div><span class="pill chip-pink">1단계 · 칭찬 친구 지원받기</span><h2>저번 달에 역할을 잘 한 친구들은 지원해 주세요!</h2><p class="sub">지원하는 친구를 <b>여러 명</b> 선택해요. 3명 이상 지원받은 후 가위바위보로 최종 3명을 정합니다.</p></div></div><div class="best-progress"><b>현재 지원자 ${selectedBest.length}명</b><span>${selectedBest.length>=3?'가위바위보를 시작할 수 있어요! 🎉':'최소 3명 이상 선택해 주세요.'}</span></div><div class="best-grid">${data.students.map(st=>{const yes=selectedBest.includes(st.id);return `<button type="button" class="best-person ${yes?'active':''}" data-action="toggle-best" data-id="${st.id}" aria-pressed="${yes}" aria-label="${st.id}번 ${esc(st.name)} ${yes?'지원 취소':'지원하기'}"><span class="best-num">${st.id}번</span><strong>${esc(st.name)}</strong><span class="best-check">${yes?'💗 지원함':'♡ 지원'}</span></button>`}).join('')}</div><div class="best-selected">🙋 지원한 친구 (${selectedBest.length}명): ${selectedBest.length?selectedBest.map(id=>`${id}번 ${bestName(id)}`).join(' · '):'아직 없어요'}</div><div class="actions"><button class="btn hot strong" data-action="save-best" ${selectedBest.length>=3?'':'disabled'}>✊✌️✋ 가위바위보로 3명 뽑기</button><button class="btn gray" data-action="intro">돌아가기</button></div><p class="quiet">모든 학생에게 지원 기회를 열어 두세요. 3명이 넘게 지원해도 괜찮습니다.</p></section>`;
+ }
+ function bestName(id){const st=data.students[id-1];return st?esc(st.name):'친구'}
+ function renderBestPickGame(){
+  if(data.bestCandidates.length<3)return renderBest();
+  return `<section class="best-game-scene content" aria-live="polite"><div class="scene-candy">🍭 🙋 ✊ ✌️ ✋ 🙋 🍬</div><span class="scene-badge">2단계 · 지원자 중 3명 선발</span><h2>지원한 친구들!</h2><h3 class="game-command">✊✌️✋ 가위바위보를 하세요!</h3><p class="game-help">지원자 <b>${data.bestCandidates.length}명</b>이 직접 가위바위보를 하여 <b>최종 3명</b>을 뽑습니다.</p><div class="match-names nominee-pills">${data.bestCandidates.map(id=>`<span class="match-name">${id}번 ${bestName(id)}</span>`).join('')}</div><p class="game-help">가위바위보가 끝났으면 <b>다음</b>을 눌러 이긴 친구 3명을 선택해 주세요.</p><div class="actions scene-actions"><button class="btn hot strong game-next" data-action="best-pick-next">다음 ➜ 3명 선택</button><button class="btn purple" data-action="best">지원자 다시 선택</button></div></section>`;
+ }
+ function renderBestPick(){
+  if(data.bestCandidates.length<3)return renderBest();
+  return `<section class="panel content best-panel"><div class="best-head"><div class="award-medal">🏅</div><div><span class="pill chip-pink">3단계 · 첫 번째 가위바위보 결과</span><h2>가위바위보로 뽑힌 친구 3명을 골라 주세요!</h2><p class="sub">지원자 ${data.bestCandidates.length}명 중에서 <b>가위바위보에 이긴 친구 3명</b>만 눌러 주세요.</p></div></div><div class="best-progress"><b>선발 ${selectedFinalists.length} / 3명</b><span>세 친구를 골라야 다음 단계로 이동할 수 있어요.</span></div><div class="best-grid">${data.bestCandidates.map(id=>{const yes=selectedFinalists.includes(id);return `<button type="button" class="best-person ${yes?'active':''}" data-action="toggle-finalist" data-id="${id}" aria-pressed="${yes}"><span class="best-num">${id}번</span><strong>${bestName(id)}</strong><span class="best-check">${yes?'🏅 선발됨':'♡ 승자 선택'}</span></button>`}).join('')}</div><div class="best-selected">🏆 최종 선발: ${selectedFinalists.length?selectedFinalists.map(id=>`${id}번 ${bestName(id)}`).join(' · '):'아직 없어요'}</div><div class="actions"><button class="btn hot strong" data-action="save-finalists" ${selectedFinalists.length===3?'':'disabled'}>🏅 3명 확정 · 다음 가위바위보</button><button class="btn yellow" data-action="best-back-pick-game">◀ 가위바위보 안내로</button><button class="btn gray" data-action="best">지원자 수정</button></div></section>`;
+ }
+ function renderBestGame(){
+  if(data.previousBest.length!==3)return renderBestPick();
+  return `<section class="best-game-scene content" aria-live="polite"><div class="scene-candy">🍬 🏆 ✊ ✌️ ✋ 🏆 🍭</div><span class="scene-badge">4단계 · 선발된 3명의 순위 결정</span><h2>저번 달에 잘 한 친구들!</h2><p class="game-help">첫 번째 가위바위보에서 뽑힌 세 친구예요! 👏</p><div class="award-cards">${data.previousBest.map(id=>`<div class="award-card"><div class="award-icon">💝</div><span>${id}번</span><strong>${bestName(id)}</strong><small>축하해요! 👏</small></div>`).join('')}</div><h3 class="game-command">✊✌️✋ 다시 가위바위보를 하세요!</h3><p class="game-help">이번에는 이 3명이 가위바위보를 해서 <b>1·2·3순위</b>를 결정해요. 끝나면 <b>다음</b>을 누르세요.</p><div class="actions scene-actions"><button class="btn hot strong game-next" data-action="best-next">다음 ➜ 순위 정하기</button><button class="btn yellow" data-action="best-edit-finalists">◀ 뽑힌 3명 수정</button></div></section>`;
+ }
+ function renderBestRanking(){
+  if(data.previousBest.length!==3)return renderBest();
+  const ranks=[{num:1,emoji:'🥇'},{num:2,emoji:'🥈'},{num:3,emoji:'🥉'}];
+  const valid=draftBestRanking.filter(x=>data.previousBest.includes(x));
+  const ready=draftBestRanking.length===3 && draftBestRanking.every(x=>data.previousBest.includes(x)) && new Set(draftBestRanking).size===3;
+  return `<section class="panel content best-ranking-panel"><div class="scene-candy" style="text-align:center">🏆 🍬 🎀 🍭 🏆</div><h2 style="text-align:center">가위바위보 결과! 1·2·3순위를 정해요</h2><p class="rank-help" style="text-align:center">각 친구의 <b>1순위·2순위·3순위 버튼</b> 중 하나를 눌러 주세요. 한 순위에는 한 명만 들어갈 수 있어요.</p><div class="rank-progress">${ranks.map((r,i)=>`<div class="rank-status ${draftBestRanking[i]?'filled':''}">${r.emoji} ${r.num}순위<br><b>${draftBestRanking[i]?bestName(draftBestRanking[i]):'선택 전'}</b></div>`).join('')}</div><div class="rank-grid">${data.previousBest.map((id,i)=>`<div class="rank-person"><div class="rank-emoji">${['💗','🍀','🌈'][i]}</div><div class="rank-number">${id}번 학생</div><strong class="rank-name">${bestName(id)}</strong><div class="rank-choices">${ranks.map(r=>`<button type="button" class="rank-choice ${draftBestRanking[r.num-1]===id?'active':''}" data-action="choose-best-rank" data-id="${id}" data-rank="${r.num}" aria-pressed="${draftBestRanking[r.num-1]===id}">${r.emoji} ${r.num}순위</button>`).join('')}</div></div>`).join('')}</div><div class="rank-notice">🎉 ${ready?'순위가 모두 정해졌어요! 아래 확정 버튼을 눌러 주세요.':`현재 ${valid.length} / 3명 순위 지정 · 가위바위보 결과에 맞게 버튼을 눌러 주세요.`}</div><div class="actions scene-actions"><button class="btn hot strong" data-action="save-best-rank" ${ready?'':'disabled'}>🏆 순위 확정 · 역할 먼저 고르기</button><button class="btn yellow" data-action="best-back-game">◀ 가위바위보 화면</button><button class="btn gray" data-action="best">추천 다시 하기</button></div><p class="quiet">※ 순위를 확정하면 1순위부터 차례로 원하는 역할을 먼저 고릅니다. 선택한 자리는 일반 배정에서도 보호됩니다.</p></section>`;
+ }
+ function priorityChosenCount(){return Object.keys(data.priorityChoices||{}).length}
+ function priorityMissing(){return data.bestRanking.filter(id=>!officerNames[id]&&!data.priorityChoices[id])}
+ function priorityAvailable(roleId){const r=role(roleId);if(!r||r.id==='officer')return 0;return Math.max(0,r.cap-Object.values(data.priorityChoices).filter(x=>x===roleId).length)}
+ function renderBestRolePick(){
+  const order=data.bestRanking;
+  if(order.length!==3)return renderBestGame();
+  const missing=priorityMissing();if(!missing.length)return renderBestResults();
+  const id=missing[0],index=order.indexOf(id),st=data.students[id-1];
+  const medals=['🥇','🥈','🥉'];
+  return `<section class="panel content priority-stage" aria-live="polite"><div class="scene-candy" style="text-align:center">🍭 🍬 👑 🌈 🍭</div><span class="scene-badge" style="display:flex;justify-content:center;margin:auto;max-width:350px">🌟 칭찬 친구 역할 우선 선택</span><h2>1·2·3순위 친구가 먼저 역할을 골라요!</h2><p class="rank-help" style="text-align:center">1순위부터 차례로 고르며, 먼저 고른 자리는 확정되어 다른 친구가 빼앗을 수 없어요.</p>
+  <div class="priority-winners">${order.map((person,i)=>{const choice=officerNames[person]?'학급 임원 고정':data.priorityChoices[person]?roleText(data.priorityChoices[person]):'선택 전';return `<div class="priority-winner ${person===id?'current':choice!=='선택 전'?'finished':''}"><div>${medals[i]} ${i+1}순위</div><strong>${person}번 ${bestName(person)}</strong><small>${esc(choice)}</small></div>`}).join('')}</div>
+  <div class="priority-current">${medals[index]} <b>${index+1}순위 · ${id}번 ${bestName(id)}</b> 친구! 원하는 역할을 하나 골라 주세요 🎁</div>
+  <div class="priority-grid">${data.roles.filter(r=>r.id!=='officer').map(r=>{const remaining=priorityAvailable(r.id);return `<button class="priority-role" type="button" data-action="choose-priority-role" data-id="${id}" data-role="${esc(r.id)}" ${remaining?'':'disabled'} aria-label="${esc(r.title)} 우선 선택, 남은 자리 ${remaining}명"><span class="role-symbol">${roleIconMarkup(r)}</span><strong>${esc(r.title)}</strong><small>${esc(r.desc)}</small><span class="slots">${remaining?`남은 자리 ${remaining}명`:'마감 · 선택 불가'}</span></button>`}).join('')}</div>
+  <p class="priority-total">🍬 원하는 역할과 남은 자리를 확인해 주세요. 학급 임원 3명은 원래 역할을 유지합니다.</p><div class="actions scene-actions"><button class="btn gray" data-action="best-results">🏆 순위 결과 보기</button></div></section>`;
+ }
+ function renderBestResults(){
+  const order=data.bestRanking;
+  if(order.length!==3 || new Set(order).size!==3 || !order.every(id=>data.previousBest.includes(id)))return renderBestGame();
+  const missing=priorityMissing();
+  return `<section class="panel content best-panel best-complete"><div class="scene-candy">🎉 🍬 🏆 🍭 🎉</div><h2>저번 달에 잘 한 친구들!</h2><p>가위바위보로 정한 <b>우선 역할 선택 순서와 선택 결과</b>예요! 👏</p><div class="award-cards">${order.map((id,i)=>`<div class="award-card rank-winner"><div class="award-icon">${['🥇','🥈','🥉'][i]}</div><span>${i+1}순위 · ${id}번</span><strong>${bestName(id)}</strong><small>${officerNames[id]?'🔒 학급 임원 고정':data.priorityChoices[id]?`${roleIconMarkup(role(data.priorityChoices[id]))} ${esc(roleText(data.priorityChoices[id]))} 선택 완료`:'🎁 아직 역할 선택 전'}</small></div>`).join('')}</div><div class="rank-notice">${missing.length?`🎁 아직 ${missing.length}명의 역할을 골라야 해요. 1순위부터 남은 자리 중 원하는 역할을 선택해 주세요.`:'✅ 우선 선택을 마쳤어요! 정한 역할은 이후 일반 배정에서도 유지됩니다.'}</div><div class="actions scene-actions">${missing.length?'<button class="btn hot strong" data-action="best-role-pick">🎁 1·2·3순위 역할 먼저 고르기</button>':'<button class="btn hot strong" data-action="application-flow">📝 나머지 친구 역할 신청·배정 시작</button><button class="btn purple" data-action="reset-priority">🔄 우선 역할 다시 고르기</button>'}<button class="btn purple" data-action="best-rank-again">🏆 순위 다시 정하기</button><button class="btn yellow" data-action="intro">🍬 처음 화면으로</button></div><p class="quiet">※ 학급 임원 3명은 변경되지 않아요. 임원이 순위에 포함되었다면 학급 임원 역할을 그대로 유지합니다.</p></section>`;
+ }
+ function choosePriorityRole(studentId,roleId){
+  const id=Number(studentId);const next=priorityMissing()[0];
+  if(id!==next||officerNames[id]){notify('현재 순서의 친구만 역할을 고를 수 있어요.');return}
+  const r=role(roleId);
+  if(!r||r.id==='officer'||priorityAvailable(roleId)<=0){notify('해당 역할은 선택할 수 없거나 자리가 다 찼어요.');return}
+  data.priorityChoices[id]=roleId;
+  // 일반 배정 기록은 초기화하고 우선 선택자와 임원 자리만 먼저 예약합니다.
+  clearAssignments();save();
+  const done=priorityMissing().length===0;
+  mode=done?'best-results':'best-role-pick';render();notify(`${data.students[id-1].name}: ${r.title} 역할을 먼저 확보했어요!`);window.scrollTo({top:240,behavior:'smooth'});
+ }
+ function resetPriority(){dialog('🎁 우선 역할 다시 선택',`<p>선택한 역할을 지우고 1순위부터 다시 고를까요?</p><p>기존의 일반 배정 결과도 초기화되지만 학급 임원 3명과 순위는 유지됩니다.</p>`,[{label:'다시 고르기',style:'hot',action:()=>{data.priorityChoices={};clearAssignments();save();hideDialog();mode='best-role-pick';render()}},{label:'취소',style:'gray',action:()=>hideDialog()}]);}
+ function toggleBest(id){
+  id=Number(id);if(!Number.isInteger(id)||id<1||id>24)return;
+  if(selectedBest.includes(id))selectedBest=selectedBest.filter(x=>x!==id);
+  else selectedBest.push(id);
+  render();
+ }
+ function saveBest(){
+  if(selectedBest.length<3){notify('지원자를 3명 이상 선택해 주세요.');return}
+  const changed=selectedBest.length!==data.bestCandidates.length||selectedBest.some(id=>!data.bestCandidates.includes(id));
+  data.bestCandidates=[...selectedBest];
+  if(changed){data.previousBest=[];data.bestRanking=[];data.priorityChoices={};clearAssignments();draftBestRanking=[];selectedFinalists=[]}
+  else selectedFinalists=[...data.previousBest];
+  save();mode='best-pick-game';render();window.scrollTo({top:240,behavior:'smooth'});
+ }
+ function toggleFinalist(id){
+  id=Number(id);if(!data.bestCandidates.includes(id))return;
+  if(selectedFinalists.includes(id))selectedFinalists=selectedFinalists.filter(x=>x!==id);
+  else if(selectedFinalists.length>=3){notify('최종 선발은 3명입니다. 다른 친구를 선택하려면 한 명을 취소해 주세요.');return}
+  else selectedFinalists.push(id);
+  render();
+ }
+ function saveFinalists(){
+  if(selectedFinalists.length!==3||new Set(selectedFinalists).size!==3||!selectedFinalists.every(id=>data.bestCandidates.includes(id))){notify('가위바위보에서 이긴 친구 3명을 선택해 주세요.');return}
+  const changed=selectedFinalists.some(id=>!data.previousBest.includes(id))||data.previousBest.length!==3;
+  data.previousBest=[...selectedFinalists];
+   data.students.forEach(s=>{if(data.previousBest.includes(s.id))s.wish=[]});
+  if(changed){data.bestRanking=[];data.priorityChoices={};clearAssignments();draftBestRanking=[]}else draftBestRanking=[...data.bestRanking];
+  save();mode='best-game';render();window.scrollTo({top:240,behavior:'smooth'});
+ }
+function chooseBestRank(id,rank){
+ id=Number(id);rank=Number(rank);
+ if(!data.previousBest.includes(id) || ![1,2,3].includes(rank))return;
+ const previous=draftBestRanking[rank-1];
+ draftBestRanking=Array.from({length:3},(_,i)=>draftBestRanking[i]||null);
+ for(let i=0;i<3;i++){if(draftBestRanking[i]===id)draftBestRanking[i]=null}
+ draftBestRanking[rank-1]=previous===id?null:id;
+ render();
+}
+function saveBestRank(){
+ if(draftBestRanking.length!==3 || !draftBestRanking.every(id=>data.previousBest.includes(id)) || new Set(draftBestRanking).size!==3){notify('세 친구의 1·2·3순위를 모두 정해 주세요.');return}
+ const changed=JSON.stringify(data.bestRanking)!==JSON.stringify(draftBestRanking);data.bestRanking=[...draftBestRanking];if(changed){data.priorityChoices={};clearAssignments()}save();mode=priorityMissing().length?'best-role-pick':'best-results';render();notify('1·2·3순위를 저장했어요! 순서대로 역할을 먼저 골라요.');window.scrollTo({top:260,behavior:'smooth'});
+}
+ function notify(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}
+ function dialog(title,html,buttons=[{label:'확인',style:'pink',action:()=>hideDialog()}]){$('dialog').innerHTML=`<h2>${esc(title)}</h2><div>${html}</div><div class="actions">${buttons.map((b,i)=>`<button class="btn ${b.style||'pink'}" data-dialog="${i}">${esc(b.label)}</button>`).join('')}</div>`;$('overlay').classList.add('show');$('overlay')._buttons=buttons}
+  function editRoleApplication(roleId){
+   const r=role(roleId);if(!r||r.id==='officer')return;
+   const choices=data.students.map(s=>{
+    const isOfficer=fixed(s),isWinner=data.previousBest.includes(s.id);
+    const otherRoleId=s.wish.find(id=>id!==r.id);
+    const locked=isOfficer||isWinner||!!otherRoleId;
+    const otherRole=otherRoleId?role(otherRoleId):null;
+    const extra=isOfficer?'👑 임원 고정':isWinner?'🌟 우선 선택자':otherRole?`🔒 ${esc(otherRole.title)} 신청 중`:'🔒 다른 역할 신청 중';
+    const label=locked?`<span>${s.id}번 ${esc(s.name)} <small>${extra}</small></span>`:`<input class="wish-pick-input" type="checkbox" value="${s.id}" ${s.wish.includes(r.id)?'checked':''}><span>${s.id}번 ${esc(s.name)}</span>`;
+    return `<label class="wish-pick ${locked?'disabled':''}" ${locked?'aria-disabled="true"':''}>${label}</label>`;
+   }).join('');
+   dialog(`${r.emoji} ${r.title} · 신청 학생 선택`, `<p><b>${esc(r.title)}</b>에 신청할 친구를 여러 명 선택하세요.<br><b>학생 1명은 역할 1개에만 신청</b>할 수 있어요. 이미 다른 역할에 신청한 친구는 선택할 수 없습니다.</p><div class="wish-pick-grid">${choices}</div><div class="wish-pick-help">🔒 다른 역할에 신청한 친구를 옮기려면 <b>먼저 기존 역할에서 신청을 취소하고</b>, 이 역할을 다시 선택해 주세요.<br>👑 고정 임원 3명과 🌟 지난달 우수 친구 3명도 일반 신청에서 제외됩니다.</div>`,[
+    {label:'✅ 신청 학생 저장',style:'hot',action:()=>saveRoleApplication(r.id)},
+    {label:'취소',style:'gray',action:()=>hideDialog()}
+   ]);
+  }
+  function saveRoleApplication(roleId){
+   const r=role(roleId);if(!r||r.id==='officer')return;
+   const selected=new Set([...document.querySelectorAll('#dialog .wish-pick-input:checked')].map(el=>Number(el.value)));
+   // 신청 모달을 열어둔 사이 다른 역할로 선택된 사람도 중복으로 저장하지 않습니다.
+   for(const s of data.students){
+    if(!selected.has(s.id))continue;
+    if(fixed(s)||data.previousBest.includes(s.id)||s.wish.some(id=>id!==roleId)){
+      notify(`${s.id}번 ${s.name}은(는) 다른 역할에 신청되어 있어요. 기존 신청을 먼저 취소해 주세요.`);
+      return;
+    }
+   }
+   for(const s of data.students){
+    if(fixed(s)||data.previousBest.includes(s.id)){s.wish=s.wish.filter(id=>id!==roleId);continue}
+    if(selected.has(s.id))s.wish=[roleId];
+    else s.wish=s.wish.filter(id=>id!==roleId);
+   }
+   clearAssignments();save();hideDialog();render();notify(`🍬 ${r.title} 신청 학생 ${selected.size}명 저장했어요.`);
+  }
+  function hideDialog(){$('overlay').classList.remove('show')}
+  function doSurveySave(){mode='survey';render()}
+ function clearAssignments(){data.assigned={6:'officer',23:'officer',24:'officer',...(data.priorityChoices||{})};flow=null;tie=null;data.flowStage=null}
+ function findWishes(){return generalStudents().filter(s=>s.wish.length>0).length}
+  function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+  function startApplicationFlow(){
+    if(data.flowStage==='remaining'){
+      dialog('🍭 배정 진행 중이에요', '<p>이전에 진행하던 <b>남은 역할 배정</b>이 있어요. 계속할까요, 신청 단계부터 다시 시작할까요?</p>', [
+        {label:'남은 역할 이어하기',style:'hot',action:()=>{hideDialog();mode='remaining';render()}},
+        {label:'신청 수정하기 (배정 초기화 가능)',style:'yellow',action:()=>{hideDialog();mode='survey';render()}},
+        {label:'닫기',style:'gray',action:()=>hideDialog()}
+      ]);return;
+    }
+    mode='survey';render();window.scrollTo({top:200,behavior:'smooth'});
+  }
+  function startAssignment(){
+    if(data.previousBest.length===3&&data.bestRanking.length!==3){mode='best-game';render();notify('칭찬 친구 3명의 가위바위보 순위를 먼저 정해 주세요!');return}
+    if(data.bestRanking.length===3&&priorityMissing().length){mode='best-role-pick';render();notify('칭찬 친구의 역할을 먼저 골라 주세요!');return}
+    const got=generalStudents().length,wish=findWishes();
+    const msg=`신청한 학생 <b>${wish}명 / ${got}명</b><br>${wish<got?`아직 신청하지 않은 학생 ${got-wish}명도 마지막 단계에서 남은 역할에 배정할 수 있어요.<br>`:''}신청자가 정원보다 많은 역할은 <b>가위바위보</b>로 먼저 결정합니다.<br>그 다음에는 <b>남은 자리만</b> 보여 주고, 선생님이 배정받지 않은 친구들을 직접 골라 넣습니다.<br><b>랜덤 배정은 하지 않습니다.</b>`;
+    dialog('🍬 역할 신청·배정 진행',`<p>${msg}</p>`,[
+      {label:'✊ 경쟁 역할 확인하기',style:'hot',action:()=>{hideDialog();clearAssignments();data.flowStage='contests';flow={processed:[]};save();continueAssignment()}},
+      {label:'신청 더 받기',style:'yellow',action:()=>{hideDialog();mode='survey';render()}},
+      {label:'취소',style:'gray',action:()=>hideDialog()}
+    ]);
+  }
+  function continueAssignment(){
+    if(!flow)flow={processed:[]};
+    // 정원을 초과한 신청만 먼저 가위바위보로 확정합니다.
+    // 나머지 모든 미배정 학생은 선생님이 남은 자리에 직접 넣습니다.
+    for(const r of data.roles.filter(r=>r.id!=='officer')){
+      const key='application:'+r.id;
+      if(flow.processed.includes(key))continue;
+      const slots=vacancies(r.id);
+      if(slots===0){flow.processed.push(key);continue}
+      const candidates=generalStudents().filter(s=>!data.assigned[s.id]&&s.wish.includes(r.id)).map(s=>s.id);
+      if(candidates.length>slots){
+        tie={roleId:r.id,candidates,seats:slots,key};
+        data.flowStage='contests';save();mode='tie-intro';render();window.scrollTo({top:250,behavior:'smooth'});return;
+      }
+      flow.processed.push(key);
+    }
+    tie=null;flow=null;data.flowStage='remaining';save();mode='remaining';render();notify('경쟁 역할을 모두 결정했어요! 이제 남은 역할에 친구들을 직접 선택해 주세요.');window.scrollTo({top:250,behavior:'smooth'});
+  }
+  function resolveTie(){
+    if(!tie)return;
+    const chosen=[...document.querySelectorAll('.tie-winner:checked')].map(el=>+el.value);
+    if(chosen.length!==tie.seats){notify('가위바위보 승자 '+tie.seats+'명을 선택해 주세요.');return}
+    chosen.forEach(id=>data.assigned[id]=tie.roleId);
+    flow.processed.push(tie.key);tie=null;save();continueAssignment();
+  }
+  function remainingStudents(){return generalStudents().filter(s=>!data.assigned[s.id])}
+  function remainingRoles(){return data.roles.filter(r=>r.id!=='officer'&&vacancies(r.id)>0)}
+  function renderRemainingStage(){
+    const people=remainingStudents(),roles=remainingRoles(),slots=roles.reduce((sum,r)=>sum+vacancies(r.id),0);
+    return `<section class="content remaining-stage"><div class="wish-hero remaining-hero"><div class="stage-label">🍭 마지막 단계 · 남은 역할 직접 배정</div><h2 class="wish-page-title">남은 친구들은 남은 역할에서 골라요!</h2><p>경쟁이 있었던 역할의 가위바위보가 끝났어요. <b>자리가 남은 역할만</b> 표시합니다. 역할을 누르고 <b>아직 배정받지 않은 친구</b>를 골라 주세요.</p><div class="remaining-stat">🙋 미배정 <strong>${people.length}명</strong>　🎁 빈자리 <strong>${slots}자리</strong></div><div class="application-note">🔒 학급 임원 3명과 칭찬 친구의 우선 선택, 가위바위보 승자는 이미 확정됐어요. 중복 배정되지 않아요.</div></div>
+    ${people.length?`<div class="remaining-names"><strong>🍬 아직 배정받지 않은 친구 ${people.length}명</strong><div class="remaining-chips">${people.map(s=>`<span class="remaining-chip">${s.id}번 ${esc(s.name)}</span>`).join('')}</div></div>`:'<div class="banner">🎉 24명의 역할이 모두 결정되었어요! 결과를 확인해 주세요.</div>'}
+    <h3 class="section-title">${people.length?'🗂️ 선택할 수 있는 남은 역할':'🌈 배정 완료'}</h3>
+    <div class="wish-role-grid">${roles.map(r=>{const own=people.filter(s=>s.wish.includes(r.id));return `<article class="wish-role-card remaining-role"><div class="role-stripe"></div><div class="wish-role-top"><span class="wish-role-emoji">${roleIconMarkup(r)}</span><div><div class="wish-role-name">${esc(r.title)}</div><div class="wish-role-cap">남은 자리 <strong>${vacancies(r.id)}명</strong> / 전체 ${r.cap}명</div></div></div><p class="wish-role-desc">♡ ${esc(r.desc)}</p><div class="remaining-applicants"><b>이 역할 신청자 중 미배정 친구</b><div class="wish-app-people">${own.length?own.map(s=>`<span class="wish-student">${s.id}번 ${esc(s.name)}</span>`).join(''):'<span class="wish-rank-empty">없음 · 신청하지 않은 친구도 선택할 수 있어요</span>'}</div></div><div class="remaining-card-action"><button class="btn hot" data-action="pick-remaining-role" data-role="${esc(r.id)}">🎁 이 역할에 친구 배정하기</button></div></article>`}).join('')}</div>
+    ${!roles.length&&people.length?'<div class="banner error">빈자리는 없는데 미배정 학생이 있어요. 다시 배정부터 확인해 주세요.</div>':''}
+    <div class="actions remaining-actions"><button class="btn hot strong" data-action="finish-remaining" ${people.length?'disabled':''}>🏆 모든 배정 완료 · 결과 보기</button><button class="btn blue" data-action="results">📋 현재 배정 결과 확인</button><button class="btn gray" data-action="cancel-assign">↩️ 배정 처음부터</button></div>
+    </section>`;
+  }
+  function pickRemainingRole(roleId){
+    const r=role(roleId);if(!r||r.id==='officer'||vacancies(roleId)===0){notify('자리가 없는 역할입니다.');return}
+    const people=remainingStudents(),want=people.filter(s=>s.wish.includes(roleId)),others=people.filter(s=>!s.wish.includes(roleId));
+    const cards=arr=>arr.map(s=>`<label class="wish-pick"><input class="remaining-pick-input" type="checkbox" value="${s.id}"><span>${s.id}번 ${esc(s.name)}</span></label>`).join('');
+    dialog(`${r.emoji} ${r.title} · 남은 친구 선택`, `<p>이 역할의 <b>남은 자리 ${vacancies(roleId)}명</b> 중 배정할 학생을 선택하세요. 한 학생은 한 역할만 맡습니다.</p><h3>💌 이 역할을 신청했던 친구 (${want.length}명)</h3><div class="wish-pick-grid">${want.length?cards(want):'<span class="quiet">신청한 미배정 친구가 없어요.</span>'}</div><h3>🍀 다른 미배정 친구 (${others.length}명)</h3><div class="wish-pick-grid">${others.length?cards(others):'<span class="quiet">다른 미배정 친구가 없어요.</span>'}</div><div class="wish-pick-help">가위바위보에서 이미 배정된 친구와 칭찬 친구 3명은 여기에 나타나지 않아요.</div>`,[
+      {label:'✅ 선택한 친구 배정',style:'hot',action:()=>saveRemainingRole(roleId)},
+      {label:'취소',style:'gray',action:()=>hideDialog()}
+    ]);
+  }
+  function saveRemainingRole(roleId){
+    const selected=[...document.querySelectorAll('#dialog .remaining-pick-input:checked')].map(el=>Number(el.value));
+    if(!selected.length){notify('배정할 학생을 한 명 이상 선택해 주세요.');return}
+    const slots=vacancies(roleId);
+    if(selected.length>slots){notify(`${roleText(roleId)}의 남은 자리 ${slots}명만 선택할 수 있어요.`);return}
+    const valid=new Set(remainingStudents().map(s=>s.id));
+    if(new Set(selected).size!==selected.length||!selected.every(id=>valid.has(id))){notify('이미 배정된 학생이 포함되어 있어요. 다시 선택해 주세요.');return}
+    selected.forEach(id=>{data.assigned[id]=roleId});
+    data.flowStage='remaining';save();hideDialog();mode='remaining';render();
+    notify(`${roleText(roleId)}에 ${selected.length}명을 배정했어요!`);
+    if(!remainingStudents().length)notify('🎉 학생 24명 모두 배정 완료! 결과 보기를 눌러 주세요.');
+  }
+  function finishRemainingAssignment(){
+    if(remainingStudents().length){notify(`아직 ${remainingStudents().length}명의 역할이 정해지지 않았어요.`);return}
+    data.flowStage=null;data.updatedAt=new Date().toISOString();save();mode='results';render();window.scrollTo({top:240,behavior:'smooth'});notify('🎉 우리 반 역할 배정 완료!');
+  }
+ function changeManual(id,roleId){id=Number(id);const s=data.students[id-1];if(!s||fixed(s)||data.previousBest.includes(id))return;if(data.priorityChoices[id]){notify('이 친구는 우선 선택으로 확정했어요. 칭찬 친구 메뉴에서 다시 골라 주세요.');render();return}const old=data.assigned[id];if(roleId==='officer'){notify('학급 임원은 고정 3명뿐이에요.');render();return}delete data.assigned[id];if(roleId&&vacancies(roleId)<=0){if(old)data.assigned[id]=old;notify('이 역할은 정원이 가득 찼어요.');render();return}if(roleId)data.assigned[id]=roleId;save();render();notify('수동 배정을 저장했어요.')}
+ const csvCell=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
+ function download(filename,body,mime='text/plain;charset=utf-8'){const blob=new Blob([body],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500)}
+ function exportCSV(template=false){
+    const rows=[['번호','이름','신청한 역할',...(!template?['배정 역할','고정 여부']:[])],...data.students.map(s=>[s.id,s.name,s.wish.map(roleText).join(' / '),...(!template?[roleText(data.assigned[s.id])==='미배정'?'':roleText(data.assigned[s.id]),fixed(s)?'임원 고정':data.previousBest.includes(s.id)?'칭찬 친구 우선선택':'']:[])])];
+    download((template?'역할신청_양식':'우리반_역할배정_결과')+'.csv','\ufeff'+rows.map(row=>row.map(csvCell).join(',')).join('\r\n'),'text/csv;charset=utf-8');notify('엑셀에서 열 수 있는 CSV 파일을 저장했어요.');
+  }
+ function backup(){download('우리반_역할배정_전체백업.json',JSON.stringify(data,null,2),'application/json;charset=utf-8');notify('전체 데이터 JSON 백업을 저장했어요.')}
+ function renderPrintArea(){
+  // 인쇄 시에는 현재 배정 상태를 그대로 읽어 A4 세로형 2열 × 6행 게시용 역할 카드로 만듭니다.
+  const sortedPeople=r=>data.students.filter(st=>data.assigned[st.id]===r.id)
+    .sort((a,b)=>r.id==='officer'?officerOrder.indexOf(a.name)-officerOrder.indexOf(b.name):a.id-b.id);
+  const cards=data.roles.map(r=>{
+   const people=sortedPeople(r);
+   const assigned=people.map(st=>`<span class="poster-person"><span class="num">${st.id}번</span><span class="name">${esc(st.name)}</span></span>`).join('');
+   const empty=Array.from({length:Math.max(0,r.cap-people.length)},()=>'<span class="poster-person empty">이름 __________</span>').join('');
+   return `<article class="poster-card"><div class="poster-role"><span class="poster-emoji">${roleIconMarkup(r)}</span><strong>${esc(r.title)}</strong><small>${r.cap}명${r.id==='officer'?' · 고정':''}</small></div><div class="poster-duty">${esc(r.desc)}</div><div class="poster-people">${assigned}${empty}</div></article>`;
+  }).join('');
+  const assignedCountNow=Object.keys(data.assigned).length;
+  $('printArea').innerHTML=`<div class="poster-heading"><div class="kicker">🍭 OUR SWEET CLASSROOM 🍬</div><h2>우리 반 역할 배정표</h2><div class="subtitle">${esc(data.className)} · ${esc(data.term)} · 함께하는 우리 반의 약속</div></div><section class="poster-grid" aria-label="역할과 학생 이름 게시 카드">${cards}</section><div class="poster-footer"><span>🌈 작은 역할 하나하나가 모여 멋진 우리 반을 만들어요!</span><span class="count">배정 ${assignedCountNow} / 24명</span></div>`;
+ }
+ function printSheet(){
+  // Direct click invokes the browser's real printer/PDF dialog without replacing the current screen.
+  renderPrintArea();
+  window.print();
+ }
+ function action(type,actionElement){if(type==='cookies'){mode='cookies';render()}else if(type==='cookie-copy'){copyCookieRoster()}else if(type==='cookie-csv'){exportCookieCSV()}else if(type==='cookie-open'){window.open('https://dahandin.com/page/students/69a620632e1d7fb530c58f8f','_blank','noopener,noreferrer')}else if(type==='results'){mode='results';render()}else if(type==='intro'){mode='intro';render()}else if(type==='survey'){mode='survey';render()}else if(type==='application-flow'){startApplicationFlow()}else if(type==='student-survey'){mode='student-survey';render()}else if(type==='edit-role-application'){editRoleApplication(actionElement?.dataset.role)}else if(type==='wishlist'){mode='wishes';render()}else if(type==='cards'){mode='cards';render()}else if(type==='table'){mode='table';render()}else if(type==='assign'){startAssignment()}else if(type==='resume-remaining'){mode='remaining';render()}else if(type==='reassign'){dialog('↩️ 다시 배정',`<p>기존 배정 결과를 지우고, 학급 임원 3명은 유지한 채 다시 배정할까요?</p>`,[{label:'다시 배정',style:'hot',action:()=>{hideDialog();startAssignment()}},{label:'취소',style:'gray',action:()=>hideDialog()}])}else if(type==='begin-tie'){if(tie){mode='tie';render();window.scrollTo({top:280,behavior:'smooth'})}}else if(type==='resolve-tie'){resolveTie()}else if(type==='pick-remaining-role'){pickRemainingRole(actionElement?.dataset.role)}else if(type==='finish-remaining'){finishRemainingAssignment()}else if(type==='cancel-assign'){dialog('배정 취소',`<p>가위바위보를 포함한 이번 배정 진행을 취소할까요? 임원 고정은 유지됩니다.</p>`,[{label:'배정 취소',style:'hot',action:()=>{clearAssignments();save();mode='intro';hideDialog();render()}},{label:'계속',style:'gray',action:()=>hideDialog()}])}else if(type==='best-results'){mode='best-results';render()}else if(type==='best-role-pick'){mode='best-role-pick';render()}else if(type==='choose-priority-role'){choosePriorityRole(actionElement?.dataset.id,actionElement?.dataset.role)}else if(type==='reset-priority'){resetPriority()}else if(type==='best'){selectedBest=[...data.bestCandidates];mode='best';render()}else if(type==='toggle-best'){toggleBest(actionElement?.dataset.id)}else if(type==='save-best'){saveBest()}else if(type==='best-pick-next'){selectedFinalists=selectedFinalists.filter(id=>data.bestCandidates.includes(id));mode='best-pick';render()}else if(type==='best-back-pick-game'){mode='best-pick-game';render()}else if(type==='toggle-finalist'){toggleFinalist(actionElement?.dataset.id)}else if(type==='save-finalists'){saveFinalists()}else if(type==='best-edit-finalists'){selectedFinalists=[...data.previousBest];mode='best-pick';render()}else if(type==='best-next'){if(data.previousBest.length===3){draftBestRanking=[...data.bestRanking];mode='best-rank';render();window.scrollTo({top:260,behavior:'smooth'})}}else if(type==='best-back-game'){mode='best-game';render();window.scrollTo({top:260,behavior:'smooth'})}else if(type==='best-rank-again'){draftBestRanking=[...data.bestRanking];mode='best-rank';render();window.scrollTo({top:260,behavior:'smooth'})}else if(type==='choose-best-rank'){chooseBestRank(actionElement?.dataset.id,actionElement?.dataset.rank)}else if(type==='save-best-rank'){saveBestRank()}else if(type==='save-survey'){doSurveySave()}else if(type==='export'||type==='export-template'){exportCSV(type==='export-template')}else if(type==='print'){printSheet()}}
+ document.addEventListener('click',e=>{const d=e.target.closest('[data-dialog]');if(d){const buttons=$('overlay')._buttons||[];buttons[+d.dataset.dialog]?.action?.();return}const button=e.target.closest('[data-action]');if(button){e.preventDefault();action(button.dataset.action,button)}});
+ $('search').addEventListener('input',e=>{searchText=e.target.value;const current=mode;if(current==='intro'){mode='cards'}if(['cards','table','wishes'].includes(mode)){render();$('search').focus();$('search').setSelectionRange(searchText.length,searchText.length)}else if(current==='results'){mode='cards';render()}});
+
+ document.addEventListener('change',e=>{if(e.target.matches('.manual-assign'))changeManual(e.target.dataset.id,e.target.value)});
+ $('overlay').addEventListener('click',e=>{if(e.target===$('overlay'))hideDialog()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hideDialog()});
+  // 글씨체 고정: 기존 화면의 글꼴 지정 및 대체 글꼴을 유지합니다.
+
+
+ safeStorage.write(data);
+ render();
+ renderPrintArea();
+})();
+</script>
+</body>
+</html>
